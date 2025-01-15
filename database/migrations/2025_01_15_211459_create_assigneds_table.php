@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('assigned', function (Blueprint $table) {
-            $table->integer('idassigned')->primary();
+        Schema::create('assigneds', function (Blueprint $table) {
+            $table->integer('idassigneds')->primary();
             $table->string('status', 45);
             $table->string('type', 45);
             $table->string('brand', 45);
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('assigned');
+        Schema::dropIfExists('assigneds');
     }
 };
