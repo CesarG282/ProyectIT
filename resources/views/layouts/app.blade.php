@@ -35,6 +35,20 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        @auth
+                        @if (Route::has('members.index'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('members.index') }}">{{ __('Members') }}</a>
+                            </li>
+                        @endif
+                    @endauth
+                    @auth
+                    @if (Route::has('generics-accounts.index'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('generics-accounts.index') }}">{{ __('generics-account') }}</a>
+                        </li>
+                    @endif
+                @endauth
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))

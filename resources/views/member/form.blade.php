@@ -1,0 +1,69 @@
+<div class="row padding-1 p-1">
+    <div class="col-md-12">
+        
+        <div class="form-group mb-2 mb20">
+            <label for="idmembers" class="form-label">{{ __('Idmembers') }}</label>
+            <input type="text" name="idmembers" class="form-control @error('idmembers') is-invalid @enderror" value="{{ old('idmembers', $member?->idmembers) }}" id="idmembers" placeholder="Idmembers">
+            {!! $errors->first('idmembers', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="name" class="form-label">{{ __('Name') }}</label>
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $member?->name) }}" id="name" placeholder="Name">
+            {!! $errors->first('name', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="idshart" class="form-label">{{ __('Idshart') }}</label>
+            <input type="text" name="idshart" class="form-control @error('idshart') is-invalid @enderror" value="{{ old('idshart', $member?->idshart) }}" id="idshart" placeholder="Idshart">
+            {!! $errors->first('idshart', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="corporate_mail" class="form-label">{{ __('Corporate Mail') }}</label>
+            <input type="text" name="corporate_mail" class="form-control @error('corporate_mail') is-invalid @enderror" value="{{ old('corporate_mail', $member?->corporate_mail) }}" id="corporate_mail" placeholder="Corporate Mail">
+            {!! $errors->first('corporate_mail', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="contact" class="form-label">{{ __('Contact') }}</label>
+            <input type="text" name="contact" class="form-control @error('contact') is-invalid @enderror" value="{{ old('contact', $member?->contact) }}" id="contact" placeholder="Contact">
+            {!! $errors->first('contact', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="area" class="form-label">{{ __('Area') }}</label>
+            <input type="text" name="area" class="form-control @error('area') is-invalid @enderror" value="{{ old('area', $member?->area) }}" id="area" placeholder="Area">
+            {!! $errors->first('area', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="locality" class="form-label">{{ __('Locality') }}</label>
+            <input type="text" name="locality" class="form-control @error('locality') is-invalid @enderror" value="{{ old('locality', $member?->locality) }}" id="locality" placeholder="Locality">
+            {!! $errors->first('locality', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="company" class="form-label">{{ __('Company') }}</label>
+            <input type="text" name="company" class="form-control @error('company') is-invalid @enderror" value="{{ old('company', $member?->company) }}" id="company" placeholder="Company">
+            {!! $errors->first('company', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="create" class="form-label">{{ __('Create') }}</label>
+            <input type="text" name="create" class="form-control @error('create') is-invalid @enderror" value="{{ old('create', $member?->create) }}" id="create" placeholder="Create">
+            {!! $errors->first('create', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="update" class="form-label">{{ __('Update') }}</label>
+            <input type="text" name="update" class="form-control @error('update') is-invalid @enderror" value="{{ old('update', $member?->update) }}" id="update" placeholder="Update">
+            {!! $errors->first('update', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="user_username" class="form-label">{{ __('User Username') }}</label>
+            <input type="text" name="user_username" class="form-control @error('user_username') is-invalid @enderror" value="{{ old('user_username', $member?->user_username) }}" id="user_username" placeholder="User Username">
+            {!! $errors->first('user_username', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="users_id" class="form-label">{{ __('Users Id') }}</label>
+            <input type="text" name="users_id" class="form-control @error('users_id') is-invalid @enderror" value="{{ old('users_id', $member?->users_id) }}" id="users_id" placeholder="Users Id">
+            {!! $errors->first('users_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+
+    </div>
+    <div class="col-md-12 mt20 mt-2">
+        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+    </div>
+</div>
