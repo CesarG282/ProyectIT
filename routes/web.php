@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GenericsAccountController;
+use App\Http\Controllers\AssignedController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('members', MemberController::class);
 Route::resource('generics-accounts', GenericsAccountController::class);
+Route::resource('assigned', AssignedController::class);

@@ -38,17 +38,24 @@
                         @auth
                         @if (Route::has('members.index'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('members.index') }}">{{ __('Members') }}</a>
+                                <a class="nav-link" href="{{ route('members.index') }}">{{ __('Miembros') }}</a>
                             </li>
                         @endif
                     @endauth
                     @auth
                     @if (Route::has('generics-accounts.index'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('generics-accounts.index') }}">{{ __('generics-account') }}</a>
+                            <a class="nav-link" href="{{ route('generics-accounts.index') }}">{{ __('Cuentas Genericas') }}</a>
                         </li>
                     @endif
                 @endauth
+                @auth
+                @if (Route::has('assigned.index'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('assigned.index') }}">{{ __('Asignados') }}</a>
+                    </li>
+                @endif
+            @endauth
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -72,7 +79,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

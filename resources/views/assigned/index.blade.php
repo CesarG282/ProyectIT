@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Generics Account
+    Assigned
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Generics Account') }}
+                                {{ __('Assigned') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('generics-accounts.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('assigneds.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,36 +36,50 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idgenerics Accountscol</th>
-										<th>Sent</th>
-										<th>Responsible</th>
-										<th>Account</th>
-										<th>Sn Computer</th>
-										<th>Brand Computer</th>
-										<th>User Username</th>
-										<th>Users Id</th>
+										<th>Idassigned</th>
+										<th>Status</th>
+										<th>Type</th>
+										<th>Brand</th>
+										<th>Serie</th>
+										<th>Model</th>
+										<th>Stiker</th>
+										<th>Monitor</th>
+										<th>Keyboard</th>
+										<th>Mouse</th>
+										<th>Adaptador</th>
+										<th>Description</th>
+										<th>Create</th>
+										<th>Update</th>
+										<th>Members Idmembers</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($genericsAccounts as $genericsAccount)
+                                    @foreach ($assigneds as $assigned)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $genericsAccount->idgenerics_accountscol }}</td>
-											<td>{{ $genericsAccount->sent }}</td>
-											<td>{{ $genericsAccount->responsible }}</td>
-											<td>{{ $genericsAccount->account }}</td>
-											<td>{{ $genericsAccount->sn_computer }}</td>
-											<td>{{ $genericsAccount->brand_computer }}</td>
-											<td>{{ $genericsAccount->user_username }}</td>
-											<td>{{ $genericsAccount->users_id }}</td>
+											<td>{{ $assigned->idassigned }}</td>
+											<td>{{ $assigned->status }}</td>
+											<td>{{ $assigned->type }}</td>
+											<td>{{ $assigned->brand }}</td>
+											<td>{{ $assigned->serie }}</td>
+											<td>{{ $assigned->model }}</td>
+											<td>{{ $assigned->stiker }}</td>
+											<td>{{ $assigned->monitor }}</td>
+											<td>{{ $assigned->keyboard }}</td>
+											<td>{{ $assigned->mouse }}</td>
+											<td>{{ $assigned->adaptador }}</td>
+											<td>{{ $assigned->description }}</td>
+											<td>{{ $assigned->create }}</td>
+											<td>{{ $assigned->update }}</td>
+											<td>{{ $assigned->members_idmembers }}</td>
 
                                             <td>
-                                                <form action="{{ route('generics-accounts.destroy',$genericsAccount->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('generics-accounts.show',$genericsAccount->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('generics-accounts.edit',$genericsAccount->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('assigneds.destroy',$assigned->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('assigneds.show',$assigned->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('assigneds.edit',$assigned->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -78,7 +92,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $genericsAccounts->links() !!}
+                {!! $assigneds->links() !!}
             </div>
         </div>
     </div>

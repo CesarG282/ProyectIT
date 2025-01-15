@@ -32,16 +32,6 @@
             {!! $errors->first('brand_computer', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="create" class="form-label">{{ __('Create') }}</label>
-            <input type="text" name="create" class="form-control @error('create') is-invalid @enderror" value="{{ old('create', $genericsAccount?->create) }}" id="create" placeholder="Create">
-            {!! $errors->first('create', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="update" class="form-label">{{ __('Update') }}</label>
-            <input type="text" name="update" class="form-control @error('update') is-invalid @enderror" value="{{ old('update', $genericsAccount?->update) }}" id="update" placeholder="Update">
-            {!! $errors->first('update', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
             <label for="user_username" class="form-label">{{ __('User Username') }}</label>
             <input type="text" name="user_username" class="form-control @error('user_username') is-invalid @enderror" value="{{ old('user_username', $genericsAccount?->user_username) }}" id="user_username" placeholder="User Username">
             {!! $errors->first('user_username', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
