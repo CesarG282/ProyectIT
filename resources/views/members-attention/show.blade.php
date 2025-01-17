@@ -1,0 +1,53 @@
+@extends('layouts.app')
+
+@section('template_title')
+    {{ $membersAttention->name ?? __('Show') . " " . __('Members Attention') }}
+@endsection
+
+@section('content')
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="float-left">
+                            <span class="card-title">{{ __('Show') }} Members Attention</span>
+                        </div>
+                        <div class="float-right">
+                            <a class="btn btn-primary btn-sm" href="{{ route('members-attention.index') }}"> {{ __('Back') }}</a>
+                        </div>
+                    </div>
+
+                    <div class="card-body bg-white">
+                        
+                        <div class="form-group mb-2 mb20">
+                            <strong>Members Attentions:</strong>
+                            {{ $membersAttention->members_attentions }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Description:</strong>
+                            {{ $membersAttention->description }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Date:</strong>
+                            {{ $membersAttention->date }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Create:</strong>
+                            {{ $membersAttention->create }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Update:</strong>
+                            {{ $membersAttention->update }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Members Idmembers:</strong>
+                            {{ $membersAttention->members_idmembers }}
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection

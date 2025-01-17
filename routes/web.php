@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\GenericsAccountController;
 use App\Http\Controllers\AssignedController;
+use App\Http\Controllers\MembersAttentionController;
+use App\Http\Controllers\MovementController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +28,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('members', MemberController::class);
 Route::resource('generics-accounts', GenericsAccountController::class);
 Route::resource('assigned', AssignedController::class);
+Route::resource('members-attention', MembersAttentionController::class);
+Route::resource('movement', MovementController::class);

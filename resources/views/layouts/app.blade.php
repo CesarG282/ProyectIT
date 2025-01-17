@@ -55,20 +55,35 @@
                             </li>
                         @endif
                     @endauth
-                    @auth
-                    @if (Route::has('generics-accounts.index'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('generics-accounts.index') }}">{{ __('Cuentas Genericas') }}</a>
-                        </li>
-                    @endif
-                @endauth
+                @auth
+                @if (Route::has('members-attention.index'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('members-attention.index') }}">{{ __('Attencion Usuarios') }}</a>
+                    </li>
+                @endif
+                 @endauth
+                 @auth
+                 @if (Route::has('generics-accounts.index'))
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ route('generics-accounts.index') }}">{{ __('Cuentas Genericas') }}</a>
+                     </li>
+                 @endif
+             @endauth
                 @auth
                 @if (Route::has('assigned.index'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('assigned.index') }}">{{ __('Asignados') }}</a>
                     </li>
                 @endif
-            @endauth
+                 @endauth
+                 @auth
+                 @if (Route::has('movement.index'))
+                     <li class="nav-item">
+                         <a class="nav-link" href="{{ route('movement.index') }}">{{ __('Movimientos') }}</a>
+                     </li>
+                 @endif
+                  @endauth
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
