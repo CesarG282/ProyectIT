@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idassigned</th>
 										<th>Status</th>
 										<th>Type</th>
 										<th>Brand</th>
@@ -50,7 +49,7 @@
 										<th>Description</th>
 										<th>Create</th>
 										<th>Update</th>
-										<th>Members Idmembers</th>
+										<th>Members Id</th>
 
                                         <th></th>
                                     </tr>
@@ -60,7 +59,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $assigned->idassigned }}</td>
 											<td>{{ $assigned->status }}</td>
 											<td>{{ $assigned->type }}</td>
 											<td>{{ $assigned->brand }}</td>
@@ -74,7 +72,7 @@
 											<td>{{ $assigned->description }}</td>
 											<td>{{ $assigned->create }}</td>
 											<td>{{ $assigned->update }}</td>
-											<td>{{ $assigned->members_idmembers }}</td>
+											<td>{{ $assigned->members_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('assigneds.destroy',$assigned->id) }}" method="POST">

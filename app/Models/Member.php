@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Member
  *
- * @property $idmembers
+ * @property $id
  * @property $name
  * @property $idshart
  * @property $corporate_mail
@@ -36,7 +36,7 @@ class Member extends Model
      *
      * @var array
      */
-    protected $fillable = ['idmembers', 'name', 'idshart', 'corporate_mail', 'contact', 'area', 'locality', 'company', 'create', 'update', 'users_id'];
+    protected $fillable = ['name', 'idshart', 'corporate_mail', 'contact', 'area', 'locality', 'company', 'create', 'update', 'users_id'];
 
 
     /**
@@ -52,7 +52,7 @@ class Member extends Model
      */
     public function assigneds()
     {
-        return $this->hasMany(\App\Models\Assigned::class, 'idmembers', 'members_idmembers');
+        return $this->hasMany(\App\Models\Assigned::class, 'id', 'members_id');
     }
     
     /**
@@ -60,7 +60,7 @@ class Member extends Model
      */
     public function membersAttentions()
     {
-        return $this->hasMany(\App\Models\MembersAttention::class, 'idmembers', 'members_idmembers');
+        return $this->hasMany(\App\Models\MembersAttention::class, 'id', 'members_id');
     }
     
 

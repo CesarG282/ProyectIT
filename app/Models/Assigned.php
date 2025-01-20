@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Assigned
  *
- * @property $idassigned
+ * @property $id
  * @property $status
  * @property $type
  * @property $brand
@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $description
  * @property $create
  * @property $update
- * @property $members_idmembers
+ * @property $members_id
  *
  * @property Member $member
  * @package App
@@ -38,7 +38,7 @@ class Assigned extends Model
      *
      * @var array
      */
-    protected $fillable = ['idassigned', 'status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description', 'create', 'update', 'members_idmembers'];
+    protected $fillable = ['status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description', 'create', 'update', 'members_id'];
 
 
     /**
@@ -46,7 +46,7 @@ class Assigned extends Model
      */
     public function member()
     {
-        return $this->belongsTo(\App\Models\Member::class, 'members_idmembers', 'idmembers');
+        return $this->belongsTo(\App\Models\Member::class, 'members_id', 'id');
     }
     
 

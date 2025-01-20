@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('members_attentions', function (Blueprint $table) {
-            $table->integer('members_attentions')->primary();
+            $table->bigInteger('id')->primary();
             $table->string('description', 500);
             $table->dateTime('date');
             $table->timestamp('create')->nullable();
             $table->timestamp('update')->nullable();
-            $table->integer('members_idmembers')->index('fk_members_attention_members1_idx');
+            $table->integer('members_id')->index('fk_members_attentions_members1_idx');
         });
     }
 

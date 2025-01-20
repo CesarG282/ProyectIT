@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Movement
  *
- * @property $idmovements
+ * @property $id
  * @property $movement_type
  * @property $sent
  * @property $address
@@ -34,7 +34,7 @@ class Movement extends Model
      *
      * @var array
      */
-    protected $fillable = ['idmovements', 'movement_type', 'sent', 'address', 'date', 'shipping_medium', 'responsible', 'description', 'create', 'update', 'users_id'];
+    protected $fillable = ['movement_type', 'sent', 'address', 'date', 'shipping_medium', 'responsible', 'description', 'create', 'update', 'users_id'];
 
 
     /**

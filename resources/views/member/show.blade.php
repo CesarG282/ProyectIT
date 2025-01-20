@@ -21,10 +21,6 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
-                            <strong>Idmembers:</strong>
-                            {{ $member->idmembers }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Name:</strong>
                             {{ $member->name }}
                         </div>

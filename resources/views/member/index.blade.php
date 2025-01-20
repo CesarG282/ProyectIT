@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idmembers</th>
 										<th>Name</th>
 										<th>Idshart</th>
 										<th>Corporate Mail</th>
@@ -56,7 +55,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $member->idmembers }}</td>
 											<td>{{ $member->name }}</td>
 											<td>{{ $member->idshart }}</td>
 											<td>{{ $member->corporate_mail }}</td>

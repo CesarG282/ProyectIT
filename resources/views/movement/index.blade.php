@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idmovements</th>
 										<th>Movement Type</th>
 										<th>Sent</th>
 										<th>Address</th>
@@ -56,7 +55,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $movement->idmovements }}</td>
 											<td>{{ $movement->movement_type }}</td>
 											<td>{{ $movement->sent }}</td>
 											<td>{{ $movement->address }}</td>

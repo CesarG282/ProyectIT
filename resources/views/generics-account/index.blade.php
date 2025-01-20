@@ -36,13 +36,13 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Idgenerics Accountscol</th>
 										<th>Sent</th>
 										<th>Responsible</th>
 										<th>Account</th>
 										<th>Sn Computer</th>
 										<th>Brand Computer</th>
-										<th>User Username</th>
+										<th>Create</th>
+										<th>Update</th>
 										<th>Users Id</th>
 
                                         <th></th>
@@ -53,13 +53,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $genericsAccount->idgenerics_accountscol }}</td>
 											<td>{{ $genericsAccount->sent }}</td>
 											<td>{{ $genericsAccount->responsible }}</td>
 											<td>{{ $genericsAccount->account }}</td>
 											<td>{{ $genericsAccount->sn_computer }}</td>
 											<td>{{ $genericsAccount->brand_computer }}</td>
-											<td>{{ $genericsAccount->user_username }}</td>
+											<td>{{ $genericsAccount->create }}</td>
+											<td>{{ $genericsAccount->update }}</td>
 											<td>{{ $genericsAccount->users_id }}</td>
 
                                             <td>

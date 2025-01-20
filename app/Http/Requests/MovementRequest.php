@@ -22,7 +22,6 @@ class MovementRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'idmovements' => 'required',
 			'movement_type' => 'required|string',
 			'sent' => 'required|string',
 			'address' => 'required|string',

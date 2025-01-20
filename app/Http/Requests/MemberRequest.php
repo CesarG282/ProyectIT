@@ -22,7 +22,6 @@ class MemberRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'idmembers' => 'required',
 			'name' => 'required|string',
 			'idshart' => 'required',
 			'corporate_mail' => 'required|string',

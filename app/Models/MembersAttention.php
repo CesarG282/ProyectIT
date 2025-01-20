@@ -7,12 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class MembersAttention
  *
- * @property $members_attentions
+ * @property $id
  * @property $description
  * @property $date
  * @property $create
  * @property $update
- * @property $members_idmembers
+ * @property $members_id
  *
  * @property Member $member
  * @package App
@@ -29,7 +29,7 @@ class MembersAttention extends Model
      *
      * @var array
      */
-    protected $fillable = ['members_attentions', 'description', 'date', 'create', 'update', 'members_idmembers'];
+    protected $fillable = ['description', 'date', 'create', 'update', 'members_id'];
 
 
     /**
@@ -37,7 +37,7 @@ class MembersAttention extends Model
      */
     public function member()
     {
-        return $this->belongsTo(\App\Models\Member::class, 'members_idmembers', 'idmembers');
+        return $this->belongsTo(\App\Models\Member::class, 'members_id', 'id');
     }
     
 

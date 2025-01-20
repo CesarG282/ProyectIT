@@ -21,10 +21,6 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
-                            <strong>Idgenerics Accountscol:</strong>
-                            {{ $genericsAccount->idgenerics_accountscol }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Sent:</strong>
                             {{ $genericsAccount->sent }}
                         </div>
@@ -45,8 +41,12 @@
                             {{ $genericsAccount->brand_computer }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>User Username:</strong>
-                            {{ $genericsAccount->user_username }}
+                            <strong>Create:</strong>
+                            {{ $genericsAccount->create }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
+                            <strong>Update:</strong>
+                            {{ $genericsAccount->update }}
                         </div>
                         <div class="form-group mb-2 mb20">
                             <strong>Users Id:</strong>

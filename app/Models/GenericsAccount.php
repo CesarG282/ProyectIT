@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class GenericsAccount
  *
- * @property $idgenerics_accountscol
+ * @property $id
  * @property $sent
  * @property $responsible
  * @property $account
@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property $brand_computer
  * @property $create
  * @property $update
- * @property $user_username
  * @property $users_id
  *
  * @property User $user
@@ -34,7 +33,7 @@ class GenericsAccount extends Model
      *
      * @var array
      */
-    protected $fillable = ['idgenerics_accountscol', 'sent', 'responsible', 'account', 'sn_computer', 'brand_computer', 'create', 'update', 'user_username', 'users_id'];
+    protected $fillable = ['sent', 'responsible', 'account', 'sn_computer', 'brand_computer', 'create', 'update', 'users_id'];
 
 
     /**

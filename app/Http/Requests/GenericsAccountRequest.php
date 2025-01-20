@@ -22,15 +22,11 @@ class GenericsAccountRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'idgenerics_accountscol' => 'required',
 			'sent' => 'required|string',
 			'responsible' => 'required|string',
 			'account' => 'required|string',
 			'sn_computer' => 'required|string',
 			'brand_computer' => 'required|string',
-			'create' => 'string',
-			'update' => 'string',
-			'user_username' => 'required|string',
 			'users_id' => 'required',
         ];
     }

@@ -21,10 +21,6 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
-                            <strong>Idassigned:</strong>
-                            {{ $assigned->idassigned }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Status:</strong>
                             {{ $assigned->status }}
                         </div>
@@ -77,8 +73,8 @@
                             {{ $assigned->update }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Members Idmembers:</strong>
-                            {{ $assigned->members_idmembers }}
+                            <strong>Members Id:</strong>
+                            {{ $assigned->members_id }}
                         </div>
 
                     </div>

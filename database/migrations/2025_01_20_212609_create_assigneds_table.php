@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('assigneds', function (Blueprint $table) {
-            $table->integer('idassigneds')->primary();
+            $table->integer('id')->primary();
             $table->string('status', 45);
             $table->string('type', 45);
             $table->string('brand', 45);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('description', 45);
             $table->timestamp('create')->nullable();
             $table->timestamp('update')->nullable();
-            $table->integer('members_idmembers')->index('fk_assigned_members1_idx');
+            $table->integer('members_id')->index('fk_assigneds_members1_idx');
         });
     }
 
