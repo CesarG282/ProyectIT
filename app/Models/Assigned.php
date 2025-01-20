@@ -19,8 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $mouse
  * @property $adaptador
  * @property $description
- * @property $create
- * @property $update
+ * @property $created_at
+ * @property $updated_at
  * @property $members_id
  *
  * @property Member $member
@@ -38,7 +38,7 @@ class Assigned extends Model
      *
      * @var array
      */
-    protected $fillable = ['status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description', 'create', 'update', 'members_id'];
+    protected $fillable = ['status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description', 'members_id'];
 
 
     /**

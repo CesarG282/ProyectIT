@@ -38,8 +38,6 @@
                                         
 										<th>Description</th>
 										<th>Date</th>
-										<th>Create</th>
-										<th>Update</th>
 										<th>Members Id</th>
 
                                         <th></th>
@@ -52,8 +50,6 @@
                                             
 											<td>{{ $membersAttention->description }}</td>
 											<td>{{ $membersAttention->date }}</td>
-											<td>{{ $membersAttention->create }}</td>
-											<td>{{ $membersAttention->update }}</td>
 											<td>{{ $membersAttention->members_id }}</td>
 
                                             <td>

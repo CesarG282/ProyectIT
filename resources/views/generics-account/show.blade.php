@@ -41,14 +41,6 @@
                             {{ $genericsAccount->brand_computer }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Create:</strong>
-                            {{ $genericsAccount->create }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Update:</strong>
-                            {{ $genericsAccount->update }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Users Id:</strong>
                             {{ $genericsAccount->users_id }}
                         </div>

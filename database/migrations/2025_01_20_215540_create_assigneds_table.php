@@ -24,8 +24,7 @@ return new class extends Migration
             $table->string('mouse', 45);
             $table->string('adaptador', 45);
             $table->string('description', 45);
-            $table->timestamp('create')->nullable();
-            $table->timestamp('update')->nullable();
+            $table->timestamps();
             $table->integer('members_id')->index('fk_assigneds_members1_idx');
         });
     }

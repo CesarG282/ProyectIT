@@ -15,8 +15,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $area
  * @property $locality
  * @property $company
- * @property $create
- * @property $update
+ * @property $created_at
+ * @property $updated_at
  * @property $users_id
  *
  * @property User $user
@@ -36,7 +36,7 @@ class Member extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'idshart', 'corporate_mail', 'contact', 'area', 'locality', 'company', 'create', 'update', 'users_id'];
+    protected $fillable = ['name', 'idshart', 'corporate_mail', 'contact', 'area', 'locality', 'company', 'users_id'];
 
 
     /**

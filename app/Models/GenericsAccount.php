@@ -14,8 +14,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $password
  * @property $sn_computer
  * @property $brand_computer
- * @property $create
- * @property $update
+ * @property $created_at
+ * @property $updated_at
  * @property $users_id
  *
  * @property User $user
@@ -33,7 +33,7 @@ class GenericsAccount extends Model
      *
      * @var array
      */
-    protected $fillable = ['sent', 'responsible', 'account', 'sn_computer', 'brand_computer', 'create', 'update', 'users_id'];
+    protected $fillable = ['sent', 'responsible', 'account', 'sn_computer', 'brand_computer', 'users_id'];
 
 
     /**

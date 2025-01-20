@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('movement.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('movements.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -43,8 +43,6 @@
 										<th>Shipping Medium</th>
 										<th>Responsible</th>
 										<th>Description</th>
-										<th>Create</th>
-										<th>Update</th>
 										<th>Users Id</th>
 
                                         <th></th>
@@ -62,8 +60,6 @@
 											<td>{{ $movement->shipping_medium }}</td>
 											<td>{{ $movement->responsible }}</td>
 											<td>{{ $movement->description }}</td>
-											<td>{{ $movement->create }}</td>
-											<td>{{ $movement->update }}</td>
 											<td>{{ $movement->users_id }}</td>
 
                                             <td>

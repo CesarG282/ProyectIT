@@ -43,8 +43,6 @@
 										<th>Area</th>
 										<th>Locality</th>
 										<th>Company</th>
-										<th>Create</th>
-										<th>Update</th>
 										<th>Users Id</th>
 
                                         <th></th>
@@ -62,8 +60,6 @@
 											<td>{{ $member->area }}</td>
 											<td>{{ $member->locality }}</td>
 											<td>{{ $member->company }}</td>
-											<td>{{ $member->create }}</td>
-											<td>{{ $member->update }}</td>
 											<td>{{ $member->users_id }}</td>
 
                                             <td>

@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id
  * @property $description
  * @property $date
- * @property $create
- * @property $update
+ * @property $created_at
+ * @property $updated_at
  * @property $members_id
  *
  * @property Member $member
@@ -29,7 +29,7 @@ class MembersAttention extends Model
      *
      * @var array
      */
-    protected $fillable = ['description', 'date', 'create', 'update', 'members_id'];
+    protected $fillable = ['description', 'date', 'members_id'];
 
 
     /**

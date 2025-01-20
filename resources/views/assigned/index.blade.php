@@ -47,8 +47,6 @@
 										<th>Mouse</th>
 										<th>Adaptador</th>
 										<th>Description</th>
-										<th>Create</th>
-										<th>Update</th>
 										<th>Members Id</th>
 
                                         <th></th>
@@ -70,8 +68,6 @@
 											<td>{{ $assigned->mouse }}</td>
 											<td>{{ $assigned->adaptador }}</td>
 											<td>{{ $assigned->description }}</td>
-											<td>{{ $assigned->create }}</td>
-											<td>{{ $assigned->update }}</td>
 											<td>{{ $assigned->members_id }}</td>
 
                                             <td>

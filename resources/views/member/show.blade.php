@@ -49,14 +49,6 @@
                             {{ $member->company }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Create:</strong>
-                            {{ $member->create }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Update:</strong>
-                            {{ $member->update }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Users Id:</strong>
                             {{ $member->users_id }}
                         </div>

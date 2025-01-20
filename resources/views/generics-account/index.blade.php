@@ -41,8 +41,6 @@
 										<th>Account</th>
 										<th>Sn Computer</th>
 										<th>Brand Computer</th>
-										<th>Create</th>
-										<th>Update</th>
 										<th>Users Id</th>
 
                                         <th></th>
@@ -58,8 +56,6 @@
 											<td>{{ $genericsAccount->account }}</td>
 											<td>{{ $genericsAccount->sn_computer }}</td>
 											<td>{{ $genericsAccount->brand_computer }}</td>
-											<td>{{ $genericsAccount->create }}</td>
-											<td>{{ $genericsAccount->update }}</td>
 											<td>{{ $genericsAccount->users_id }}</td>
 
                                             <td>

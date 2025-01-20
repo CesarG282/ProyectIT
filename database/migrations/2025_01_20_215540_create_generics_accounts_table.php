@@ -19,8 +19,7 @@ return new class extends Migration
             $table->string('password', 45);
             $table->string('sn_computer', 45);
             $table->string('brand_computer', 45);
-            $table->timestamp('create')->nullable();
-            $table->timestamp('update')->nullable();
+            $table->timestamps();
             $table->unsignedBigInteger('users_id')->index('fk_generics_accounts_users1_idx');
         });
     }

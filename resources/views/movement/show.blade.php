@@ -49,14 +49,6 @@
                             {{ $movement->description }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Create:</strong>
-                            {{ $movement->create }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Update:</strong>
-                            {{ $movement->update }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Users Id:</strong>
                             {{ $movement->users_id }}
                         </div>

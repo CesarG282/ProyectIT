@@ -29,14 +29,6 @@
                             {{ $membersAttention->date }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Create:</strong>
-                            {{ $membersAttention->create }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Update:</strong>
-                            {{ $membersAttention->update }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Members Id:</strong>
                             {{ $membersAttention->members_id }}
                         </div>

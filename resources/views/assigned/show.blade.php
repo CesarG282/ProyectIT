@@ -65,14 +65,6 @@
                             {{ $assigned->description }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>Create:</strong>
-                            {{ $assigned->create }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Update:</strong>
-                            {{ $assigned->update }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Members Id:</strong>
                             {{ $assigned->members_id }}
                         </div>

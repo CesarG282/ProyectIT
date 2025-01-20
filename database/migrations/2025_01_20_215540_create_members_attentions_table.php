@@ -15,8 +15,7 @@ return new class extends Migration
             $table->bigInteger('id')->primary();
             $table->string('description', 500);
             $table->dateTime('date');
-            $table->timestamp('create')->nullable();
-            $table->timestamp('update')->nullable();
+            $table->timestamps();
             $table->integer('members_id')->index('fk_members_attentions_members1_idx');
         });
     }
