@@ -34,6 +34,7 @@
             <div class="container">
                 <!-- Nombre fijo en el navbar -->
                 <a class="navbar-brand" href="{{ route('home') }}">
+                    <img src="{{ asset('images/bavaria-logo-red.png') }}" alt="Logo">
                     IT BAVARIA
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

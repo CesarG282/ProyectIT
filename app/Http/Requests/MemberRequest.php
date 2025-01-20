@@ -30,9 +30,6 @@ class MemberRequest extends FormRequest
 			'area' => 'required|string',
 			'locality' => 'required|string',
 			'company' => 'required|string',
-			'create' => 'string',
-			'update' => 'string',
-			'user_username' => 'required|string',
 			'users_id' => 'required',
         ];
     }

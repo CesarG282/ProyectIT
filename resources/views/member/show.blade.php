@@ -61,10 +61,6 @@
                             {{ $member->update }}
                         </div>
                         <div class="form-group mb-2 mb20">
-                            <strong>User Username:</strong>
-                            {{ $member->user_username }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
                             <strong>Users Id:</strong>
                             {{ $member->users_id }}
                         </div>
