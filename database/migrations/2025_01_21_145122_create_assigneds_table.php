@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('assigneds', function (Blueprint $table) {
             $table->integer('id')->primary();
+            $table->integer('members_id')->index('fk_assigneds_members1_idx');
             $table->string('status', 45);
             $table->string('type', 45);
             $table->string('brand', 45);
@@ -25,7 +26,6 @@ return new class extends Migration
             $table->string('adaptador', 45);
             $table->string('description', 45);
             $table->timestamps();
-            $table->integer('members_id')->index('fk_assigneds_members1_idx');
         });
     }
 

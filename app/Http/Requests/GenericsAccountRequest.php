@@ -22,7 +22,7 @@ class GenericsAccountRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'sent' => 'required|string',
+			'area' => 'required|string',
 			'responsible' => 'required|string',
 			'account' => 'required|string',
 			'sn_computer' => 'required|string',

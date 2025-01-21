@@ -2,9 +2,9 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="sent" class="form-label">{{ __('Sent') }}</label>
-            <input type="text" name="sent" class="form-control @error('sent') is-invalid @enderror" value="{{ old('sent', $genericsAccount?->sent) }}" id="sent" placeholder="Sent">
-            {!! $errors->first('sent', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+            <label for="area" class="form-label">{{ __('Area') }}</label>
+            <input type="text" name="area" class="form-control @error('area') is-invalid @enderror" value="{{ old('area', $genericsAccount?->area) }}" id="area" placeholder="Area">
+            {!! $errors->first('area', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="responsible" class="form-label">{{ __('Responsible') }}</label>

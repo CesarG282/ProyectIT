@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('area', 45);
             $table->string('locality', 45);
             $table->string('company', 45);
-            $table->timestamps();
             $table->unsignedBigInteger('users_id')->index('fk_members_users1_idx');
+            $table->timestamps();
         });
     }
 

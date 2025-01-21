@@ -22,6 +22,7 @@ class AssignedRequest extends FormRequest
     public function rules(): array
     {
         return [
+			'members_id' => 'required',
 			'status' => 'required|string',
 			'type' => 'required|string',
 			'brand' => 'required|string',
@@ -33,7 +34,6 @@ class AssignedRequest extends FormRequest
 			'mouse' => 'required|string',
 			'adaptador' => 'required|string',
 			'description' => 'required|string',
-			'members_id' => 'required',
         ];
     }
 }

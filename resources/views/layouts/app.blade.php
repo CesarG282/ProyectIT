@@ -56,6 +56,13 @@
                             </li>
                         @endif
                     @endauth
+                    @auth
+                    @if (Route::has('assigned.index'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('assigned.index') }}">{{ __('Asignados') }}</a>
+                        </li>
+                    @endif
+                     @endauth
                 @auth
                 @if (Route::has('members-attention.index'))
                     <li class="nav-item">
@@ -70,13 +77,6 @@
                      </li>
                  @endif
              @endauth
-                @auth
-                @if (Route::has('assigned.index'))
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('assigned.index') }}">{{ __('Asignados') }}</a>
-                    </li>
-                @endif
-                 @endauth
                  @auth
                  @if (Route::has('movement.index'))
                      <li class="nav-item">

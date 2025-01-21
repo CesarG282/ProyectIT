@@ -2,6 +2,11 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
+            <label for="members_id" class="form-label">{{ __('Members Id') }}</label>
+            <input type="text" name="members_id" class="form-control @error('members_id') is-invalid @enderror" value="{{ old('members_id', $assigned?->members_id) }}" id="members_id" placeholder="Members Id">
+            {!! $errors->first('members_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
             <label for="status" class="form-label">{{ __('Status') }}</label>
             <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" value="{{ old('status', $assigned?->status) }}" id="status" placeholder="Status">
             {!! $errors->first('status', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
@@ -55,11 +60,6 @@
             <label for="description" class="form-label">{{ __('Description') }}</label>
             <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description', $assigned?->description) }}" id="description" placeholder="Description">
             {!! $errors->first('description', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
-        <div class="form-group mb-2 mb20">
-            <label for="members_id" class="form-label">{{ __('Members Id') }}</label>
-            <input type="text" name="members_id" class="form-control @error('members_id') is-invalid @enderror" value="{{ old('members_id', $assigned?->members_id) }}" id="members_id" placeholder="Members Id">
-            {!! $errors->first('members_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
     </div>

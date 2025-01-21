@@ -21,16 +21,16 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
+                            <strong>Members Id:</strong>
+                            {{ $membersAttention->members_id }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
                             <strong>Description:</strong>
                             {{ $membersAttention->description }}
                         </div>
                         <div class="form-group mb-2 mb20">
                             <strong>Date:</strong>
                             {{ $membersAttention->date }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Members Id:</strong>
-                            {{ $membersAttention->members_id }}
                         </div>
 
                     </div>

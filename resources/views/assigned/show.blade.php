@@ -21,6 +21,10 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
+                            <strong>Members Id:</strong>
+                            {{ $assigned->members_id }}
+                        </div>
+                        <div class="form-group mb-2 mb20">
                             <strong>Status:</strong>
                             {{ $assigned->status }}
                         </div>
@@ -63,10 +67,6 @@
                         <div class="form-group mb-2 mb20">
                             <strong>Description:</strong>
                             {{ $assigned->description }}
-                        </div>
-                        <div class="form-group mb-2 mb20">
-                            <strong>Members Id:</strong>
-                            {{ $assigned->members_id }}
                         </div>
 
                     </div>

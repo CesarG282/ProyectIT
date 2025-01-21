@@ -36,6 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
+										<th>Members Id</th>
 										<th>Status</th>
 										<th>Type</th>
 										<th>Brand</th>
@@ -47,7 +48,6 @@
 										<th>Mouse</th>
 										<th>Adaptador</th>
 										<th>Description</th>
-										<th>Members Id</th>
 
                                         <th></th>
                                     </tr>
@@ -57,6 +57,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+											<td>{{ $assigned->members_id }}</td>
 											<td>{{ $assigned->status }}</td>
 											<td>{{ $assigned->type }}</td>
 											<td>{{ $assigned->brand }}</td>
@@ -68,7 +69,6 @@
 											<td>{{ $assigned->mouse }}</td>
 											<td>{{ $assigned->adaptador }}</td>
 											<td>{{ $assigned->description }}</td>
-											<td>{{ $assigned->members_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('assigneds.destroy',$assigned->id) }}" method="POST">

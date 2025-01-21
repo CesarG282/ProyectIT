@@ -21,8 +21,8 @@
                     <div class="card-body bg-white">
                         
                         <div class="form-group mb-2 mb20">
-                            <strong>Sent:</strong>
-                            {{ $genericsAccount->sent }}
+                            <strong>Area:</strong>
+                            {{ $genericsAccount->area }}
                         </div>
                         <div class="form-group mb-2 mb20">
                             <strong>Responsible:</strong>

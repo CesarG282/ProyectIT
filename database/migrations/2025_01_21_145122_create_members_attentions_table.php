@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('members_attentions', function (Blueprint $table) {
             $table->bigInteger('id')->primary();
+            $table->integer('members_id')->index('fk_members_attentions_members1_idx');
             $table->string('description', 500);
             $table->dateTime('date');
             $table->timestamps();
-            $table->integer('members_id')->index('fk_members_attentions_members1_idx');
         });
     }
 

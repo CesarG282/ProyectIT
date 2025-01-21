@@ -11,17 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movements', function (Blueprint $table) {
+        Schema::create('generics_accounts', function (Blueprint $table) {
             $table->integer('id')->primary();
-            $table->string('movement_type', 45);
-            $table->string('sent', 45);
-            $table->string('address', 45);
-            $table->date('date');
-            $table->string('shipping_medium', 45);
+            $table->string('area', 45);
             $table->string('responsible', 45);
-            $table->string('description', 500);
+            $table->string('account', 45);
+            $table->string('password', 45);
+            $table->string('sn_computer', 45);
+            $table->string('brand_computer', 45);
+            $table->unsignedBigInteger('users_id')->index('fk_generics_accounts_users1_idx');
             $table->timestamps();
-            $table->unsignedBigInteger('users_id')->index('fk_movements_users1_idx');
         });
     }
 
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('movements');
+        Schema::dropIfExists('generics_accounts');
     }
 };

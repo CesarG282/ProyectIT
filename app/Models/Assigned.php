@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Assigned
  *
  * @property $id
+ * @property $members_id
  * @property $status
  * @property $type
  * @property $brand
@@ -21,9 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $description
  * @property $created_at
  * @property $updated_at
- * @property $members_id
  *
- * @property Member $member
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -38,16 +37,8 @@ class Assigned extends Model
      *
      * @var array
      */
-    protected $fillable = ['status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description', 'members_id'];
+    protected $fillable = ['members_id', 'status', 'type', 'brand', 'serie', 'model', 'stiker', 'monitor', 'keyboard', 'mouse', 'adaptador', 'description'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function member()
-    {
-        return $this->belongsTo(\App\Models\Member::class, 'members_id', 'id');
-    }
-    
 
 }

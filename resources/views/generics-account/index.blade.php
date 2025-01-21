@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Sent</th>
+										<th>Area</th>
 										<th>Responsible</th>
 										<th>Account</th>
 										<th>Sn Computer</th>
@@ -51,7 +51,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $genericsAccount->sent }}</td>
+											<td>{{ $genericsAccount->area }}</td>
 											<td>{{ $genericsAccount->responsible }}</td>
 											<td>{{ $genericsAccount->account }}</td>
 											<td>{{ $genericsAccount->sn_computer }}</td>

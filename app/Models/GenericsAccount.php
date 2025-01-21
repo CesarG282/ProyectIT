@@ -8,17 +8,16 @@ use Illuminate\Database\Eloquent\Model;
  * Class GenericsAccount
  *
  * @property $id
- * @property $sent
+ * @property $area
  * @property $responsible
  * @property $account
  * @property $password
  * @property $sn_computer
  * @property $brand_computer
+ * @property $users_id
  * @property $created_at
  * @property $updated_at
- * @property $users_id
  *
- * @property User $user
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -33,16 +32,8 @@ class GenericsAccount extends Model
      *
      * @var array
      */
-    protected $fillable = ['sent', 'responsible', 'account', 'sn_computer', 'brand_computer', 'users_id'];
+    protected $fillable = ['area', 'responsible', 'account', 'sn_computer', 'brand_computer', 'users_id'];
 
 
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo(\App\Models\User::class, 'users_id', 'id');
-    }
-    
 
 }
