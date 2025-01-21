@@ -22,9 +22,9 @@ class MembersAttentionRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'members_id' => 'required',
 			'description' => 'required|string',
 			'date' => 'required',
+			'members_id' => 'required',
         ];
     }
 }

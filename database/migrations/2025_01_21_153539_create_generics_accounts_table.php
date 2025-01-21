@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('generics_accounts', function (Blueprint $table) {
-            $table->integer('id')->primary();
+            $table->bigIncrements('id');
             $table->string('area', 45);
             $table->string('responsible', 45);
             $table->string('account', 45);

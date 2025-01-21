@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Members Id</th>
 										<th>Description</th>
 										<th>Date</th>
+										<th>Members Id</th>
 
                                         <th></th>
                                     </tr>
@@ -48,9 +48,9 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $membersAttention->members_id }}</td>
 											<td>{{ $membersAttention->description }}</td>
 											<td>{{ $membersAttention->date }}</td>
+											<td>{{ $membersAttention->members_id }}</td>
 
                                             <td>
                                                 <form action="{{ route('members-attentions.destroy',$membersAttention->id) }}" method="POST">

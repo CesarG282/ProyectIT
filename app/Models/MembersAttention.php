@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
  * Class MembersAttention
  *
  * @property $id
- * @property $members_id
  * @property $description
  * @property $date
  * @property $created_at
  * @property $updated_at
+ * @property $members_id
  *
+ * @property Member $member
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -28,8 +29,16 @@ class MembersAttention extends Model
      *
      * @var array
      */
-    protected $fillable = ['members_id', 'description', 'date'];
+    protected $fillable = ['description', 'date', 'members_id'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function member()
+    {
+        return $this->belongsTo(\App\Models\Member::class, 'members_id', 'id');
+    }
+    
 
 }

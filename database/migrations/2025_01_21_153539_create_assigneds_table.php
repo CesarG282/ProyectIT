@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('assigneds', function (Blueprint $table) {
-            $table->integer('id')->primary();
-            $table->integer('members_id')->index('fk_assigneds_members1_idx');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('members_id')->index('fk_assigneds_members1_idx');
             $table->string('status', 45);
             $table->string('type', 45);
             $table->string('brand', 45);
