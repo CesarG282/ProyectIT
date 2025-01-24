@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Member') }}
+                                {{ __('Usuarios') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('members.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear Nuevo') }}
                                 </a>
                               </div>
                         </div>
@@ -36,14 +36,14 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Name</th>
+										<th>Nombre</th>
 										<th>Idshart</th>
-										<th>Corporate Mail</th>
-										<th>Contact</th>
+										<th>Correo Corporativo</th>
+										<th>Contacto</th>
 										<th>Area</th>
-										<th>Locality</th>
-										<th>Company</th>
-										<th>Users </th>
+										<th>Localidad</th>
+										<th>Empresa</th>
+										<th>Administrador </th>
 
                                         <th></th>
                                     </tr>

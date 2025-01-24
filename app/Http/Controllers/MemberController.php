@@ -61,10 +61,16 @@ class MemberController extends Controller
      */
     public function edit($id)
     {
+        // Encontramos el miembro que estamos editando
         $member = Member::find($id);
-
-        return view('member.edit', compact('member'));
+    
+        // Cargamos todos los usuarios para que puedan ser seleccionados en el formulario
+        $users = \App\Models\User::all();
+    
+        // Pasamos tanto el miembro como los usuarios a la vista
+        return view('member.edit', compact('member', 'users'));
     }
+    
 
     /**
      * Update the specified resource in storage.
