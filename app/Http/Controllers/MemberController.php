@@ -27,21 +27,25 @@ class MemberController extends Controller
      */
     public function create()
     {
+        // Traemos todos los usuarios para que puedan ser seleccionados en el formulario
+        $users = \App\Models\User::all(); 
+    
+        // Creamos un nuevo miembro
         $member = new Member();
-        return view('member.create', compact('member'));
+    
+        return view('member.create', compact('member', 'users'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(MemberRequest $request)
-    {
-        Member::create($request->validated());
+{
+    // Creamos el nuevo miembro usando los datos validados
+    Member::create($request->validated());
 
-        return redirect()->route('members.index')
-            ->with('success', 'Member created successfully.');
-    }
-
+    return redirect()->route('members.index')
+        ->with('success', 'Member created successfully.');
+}
     /**
      * Display the specified resource.
      */

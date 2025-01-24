@@ -37,10 +37,16 @@
             {!! $errors->first('company', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="users_id" class="form-label">{{ __('Users Id') }}</label>
-            <input type="text" name="users_id" class="form-control @error('users_id') is-invalid @enderror" value="{{ old('users_id', $member?->users_id) }}" id="users_id" placeholder="Users Id">
+            <label for="users_id" class="form-label">{{ __('Users') }}</label>
+            <select name="users_id" class="form-control @error('users_id') is-invalid @enderror" id="users_id">
+                <option value="" disabled selected>{{ __('Select a user') }}</option>
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}" {{ old('users_id') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                @endforeach
+            </select>
             {!! $errors->first('users_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        
 
     </div>
     <div class="col-md-12 mt20 mt-2">

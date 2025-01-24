@@ -43,7 +43,7 @@
 										<th>Area</th>
 										<th>Locality</th>
 										<th>Company</th>
-										<th>Users Id</th>
+										<th>Users </th>
 
                                         <th></th>
                                     </tr>
@@ -60,8 +60,9 @@
 											<td>{{ $member->area }}</td>
 											<td>{{ $member->locality }}</td>
 											<td>{{ $member->company }}</td>
-											<td>{{ $member->users_id }}</td>
+                                            <td>{{ $member->user->name ?? 'No user assigned' }}</td> <!-- Aquí se muestra el nombre del usuario -->
 
+                                            <td>
                                             <td>
                                                 <form action="{{ route('members.destroy',$member->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('members.show',$member->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
