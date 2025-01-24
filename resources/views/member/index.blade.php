@@ -39,7 +39,7 @@
 										<th>Nombre</th>
 										<th>Idshart</th>
 										<th>Correo Corporativo</th>
-										<th>Contacto</th>
+										<th>Correo Corporativo</th>
 										<th>Area</th>
 										<th>Localidad</th>
 										<th>Empresa</th>

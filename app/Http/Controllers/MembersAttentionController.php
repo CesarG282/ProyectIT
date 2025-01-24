@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\MembersAttention;
+use App\Models\Member;  // Importar el modelo Member
+use Carbon\Carbon;
 use App\Http\Requests\MembersAttentionRequest;
 
 /**
@@ -28,7 +30,8 @@ class MembersAttentionController extends Controller
     public function create()
     {
         $membersAttention = new MembersAttention();
-        return view('members-attention.create', compact('membersAttention'));
+        $members = Member::all();  // Obtener todos los miembros de la base de datos
+        return view('members-attention.create', compact('membersAttention','members'));
     }
 
     /**

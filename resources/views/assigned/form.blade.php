@@ -2,7 +2,7 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="members_id" class="form-label">{{ __('Members') }}</label>
+            <label for="members_id" class="form-label">{{ __('Usuario') }}</label>
             <select name="members_id" class="form-control @error('members_id') is-invalid @enderror" id="members_id">
                 <option value="">Seleccione un Miembro</option> <!-- Opción vacía para seleccionar -->
                 @foreach($members as $member)

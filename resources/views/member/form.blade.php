@@ -2,7 +2,7 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="name" class="form-label">{{ __('Name') }}</label>
+            <label for="name" class="form-label">{{ __('Nombre') }}</label>
             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name', $member?->name) }}" id="name" placeholder="Name">
             {!! $errors->first('name', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -12,12 +12,12 @@
             {!! $errors->first('idshart', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="corporate_mail" class="form-label">{{ __('Corporate Mail') }}</label>
+            <label for="corporate_mail" class="form-label">{{ __('Correo Corporativo') }}</label>
             <input type="text" name="corporate_mail" class="form-control @error('corporate_mail') is-invalid @enderror" value="{{ old('corporate_mail', $member?->corporate_mail) }}" id="corporate_mail" placeholder="Corporate Mail">
             {!! $errors->first('corporate_mail', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="contact" class="form-label">{{ __('Contact') }}</label>
+            <label for="contact" class="form-label">{{ __('Contacto') }}</label>
             <input type="text" name="contact" class="form-control @error('contact') is-invalid @enderror" value="{{ old('contact', $member?->contact) }}" id="contact" placeholder="Contact">
             {!! $errors->first('contact', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -27,17 +27,17 @@
             {!! $errors->first('area', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="locality" class="form-label">{{ __('Locality') }}</label>
+            <label for="locality" class="form-label">{{ __('Localidad') }}</label>
             <input type="text" name="locality" class="form-control @error('locality') is-invalid @enderror" value="{{ old('locality', $member?->locality) }}" id="locality" placeholder="Locality">
             {!! $errors->first('locality', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="company" class="form-label">{{ __('Company') }}</label>
+            <label for="company" class="form-label">{{ __('Empresa') }}</label>
             <input type="text" name="company" class="form-control @error('company') is-invalid @enderror" value="{{ old('company', $member?->company) }}" id="company" placeholder="Company">
             {!! $errors->first('company', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="users_id" class="form-label">{{ __('Users') }}</label>
+            <label for="users_id" class="form-label">{{ __('Administrador') }}</label>
             <select name="users_id" class="form-control @error('users_id') is-invalid @enderror" id="users_id">
                 <option value="" disabled selected>{{ __('Select a user') }}</option>
                 @foreach($users as $user)

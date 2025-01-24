@@ -52,7 +52,7 @@
                         @auth
                         @if (Route::has('members.index'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('members.index') }}">{{ __('Miembros') }}</a>
+                                <a class="nav-link" href="{{ route('members.index') }}">{{ __('Usuarios') }}</a>
                             </li>
                         @endif
                     @endauth
