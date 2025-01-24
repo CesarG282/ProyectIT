@@ -36,18 +36,18 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Members Id</th>
+										<th>Usuario</th>
 										<th>Status</th>
-										<th>Type</th>
-										<th>Brand</th>
+										<th>Tipo</th>
+										<th>Marca</th>
 										<th>Serie</th>
-										<th>Model</th>
+										<th>Modelo</th>
 										<th>Stiker</th>
 										<th>Monitor</th>
-										<th>Keyboard</th>
+										<th>Teclado</th>
 										<th>Mouse</th>
 										<th>Adaptador</th>
-										<th>Description</th>
+										<th>Descripción</th>
 
                                         <th></th>
                                     </tr>
@@ -57,7 +57,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $assigned->members_id }}</td>
+                                            <td>{{ $assigned->member->name }}</td>  <!-- Cambié de members_id a member->name -->
 											<td>{{ $assigned->status }}</td>
 											<td>{{ $assigned->type }}</td>
 											<td>{{ $assigned->brand }}</td>
@@ -71,9 +71,9 @@
 											<td>{{ $assigned->description }}</td>
 
                                             <td>
-                                                <form action="{{ route('assigneds.destroy',$assigned->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('assigneds.show',$assigned->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('assigneds.edit',$assigned->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('assigned.destroy',$assigned->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('assigned.show',$assigned->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('assigned.edit',$assigned->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

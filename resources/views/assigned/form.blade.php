@@ -2,10 +2,18 @@
     <div class="col-md-12">
         
         <div class="form-group mb-2 mb20">
-            <label for="members_id" class="form-label">{{ __('Members Id') }}</label>
-            <input type="text" name="members_id" class="form-control @error('members_id') is-invalid @enderror" value="{{ old('members_id', $assigned?->members_id) }}" id="members_id" placeholder="Members Id">
+            <label for="members_id" class="form-label">{{ __('Members') }}</label>
+            <select name="members_id" class="form-control @error('members_id') is-invalid @enderror" id="members_id">
+                <option value="">Seleccione un Miembro</option> <!-- Opción vacía para seleccionar -->
+                @foreach($members as $member)
+                    <option value="{{ $member->id }}" {{ old('members_id') == $member->id ? 'selected' : '' }}>
+                        {{ $member->name }}  <!-- Aquí estamos mostrando el 'name' del miembro -->
+                    </option>
+                @endforeach
+            </select>
             {!! $errors->first('members_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        
         <div class="form-group mb-2 mb20">
             <label for="status" class="form-label">{{ __('Status') }}</label>
             <input type="text" name="status" class="form-control @error('status') is-invalid @enderror" value="{{ old('status', $assigned?->status) }}" id="status" placeholder="Status">

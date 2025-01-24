@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Assigned;
+use App\Models\Member;  // Importar el modelo Member
 use App\Http\Requests\AssignedRequest;
 
 /**
@@ -28,20 +29,19 @@ class AssignedController extends Controller
     public function create()
     {
         $assigned = new Assigned();
-        return view('assigned.create', compact('assigned'));
+        $members = Member::all();  // Obtener todos los miembros de la base de datos
+        return view('assigned.create', compact('assigned', 'members'));  // Pasar los miembros a la vista
     }
-
     /**
      * Store a newly created resource in storage.
      */
     public function store(AssignedRequest $request)
     {
         Assigned::create($request->validated());
-
-        return redirect()->route('assigneds.index')
+    
+        return redirect()->route('assigned.index')
             ->with('success', 'Assigned created successfully.');
     }
-
     /**
      * Display the specified resource.
      */
@@ -72,12 +72,21 @@ class AssignedController extends Controller
         return redirect()->route('assigneds.index')
             ->with('success', 'Assigned updated successfully');
     }
-
     public function destroy($id)
     {
-        Assigned::find($id)->delete();
-
-        return redirect()->route('assigneds.index')
+        $assigned = Assigned::find($id);
+    
+        // Si no se encuentra el registro, redirige con un mensaje de error
+        if (!$assigned) {
+            return redirect()->route('assigned.index')
+                ->with('error', 'Assigned not found');
+        }
+    
+        // Si se encuentra, elimina el registro
+        $assigned->delete();
+    
+        return redirect()->route('assigned.index')
             ->with('success', 'Assigned deleted successfully');
     }
+    
 }
