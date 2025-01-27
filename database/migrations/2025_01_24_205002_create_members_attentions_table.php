@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('members_attentions', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('description', 500);
+            $table->string('description', 5000);
             $table->date('date');
             $table->timestamps();
             $table->unsignedBigInteger('members_id')->index('fk_members_attentions_members1_idx');

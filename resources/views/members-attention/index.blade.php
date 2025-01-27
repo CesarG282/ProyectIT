@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Description</th>
-										<th>Date</th>
-										<th>Members Id</th>
+										<th>Descripcion de la Actividad</th>
+										<th>Fecha</th>
+										<th>Usuario</th>
 
                                         <th></th>
                                     </tr>
@@ -50,12 +50,12 @@
                                             
 											<td>{{ $membersAttention->description }}</td>
 											<td>{{ $membersAttention->date }}</td>
-											<td>{{ $membersAttention->members_id }}</td>
+                                            <td>{{ $membersAttention->member->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('members-attentions.destroy',$membersAttention->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('members-attentions.show',$membersAttention->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('members-attentions.edit',$membersAttention->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('members-attention.destroy',$membersAttention->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('members-attention.show',$membersAttention->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('members-attention.edit',$membersAttention->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

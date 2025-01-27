@@ -17,6 +17,11 @@
             {!! $errors->first('account', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
+            <label for="password" class="form-label">{{ __('password') }}</label>
+            <input type="text" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password', $genericsAccount?->password) }}" id="password" placeholder="password">
+            {!! $errors->first('password', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
             <label for="sn_computer" class="form-label">{{ __('Sn Computer') }}</label>
             <input type="text" name="sn_computer" class="form-control @error('sn_computer') is-invalid @enderror" value="{{ old('sn_computer', $genericsAccount?->sn_computer) }}" id="sn_computer" placeholder="Sn Computer">
             {!! $errors->first('sn_computer', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
@@ -27,8 +32,13 @@
             {!! $errors->first('brand_computer', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="users_id" class="form-label">{{ __('Users Id') }}</label>
-            <input type="text" name="users_id" class="form-control @error('users_id') is-invalid @enderror" value="{{ old('users_id', $genericsAccount?->users_id) }}" id="users_id" placeholder="Users Id">
+            <label for="users_id" class="form-label">{{ __('Administrador') }}</label>
+            <select name="users_id" class="form-control @error('users_id') is-invalid @enderror" id="users_id">
+                <option value="" disabled selected>{{ __('Select a user') }}</option>
+                @foreach($users as $user)
+                    <option value="{{ $user->id }}" {{ old('users_id') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
+                @endforeach
+            </select>
             {!! $errors->first('users_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

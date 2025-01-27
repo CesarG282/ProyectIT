@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\GenericsAccount;
+use App\Models\User;
 use App\Http\Requests\GenericsAccountRequest;
 
 /**
@@ -16,8 +17,10 @@ class GenericsAccountController extends Controller
      */
     public function index()
     {
+        // Traemos todos los registros de GenericsAccount con paginación
         $genericsAccounts = GenericsAccount::paginate();
 
+        // Retornamos la vista generics-account.index con los datos necesarios
         return view('generics-account.index', compact('genericsAccounts'))
             ->with('i', (request()->input('page', 1) - 1) * $genericsAccounts->perPage());
     }
@@ -27,8 +30,13 @@ class GenericsAccountController extends Controller
      */
     public function create()
     {
+        // Traemos todos los usuarios para que puedan ser seleccionados en el formulario
+        $users = User::all(); 
+
+        // Creamos una nueva instancia de GenericsAccount
         $genericsAccount = new GenericsAccount();
-        return view('generics-account.create', compact('genericsAccount'));
+    
+        return view('generics-account.create', compact('genericsAccount', 'users')); // Usamos la variable genericsAccount
     }
 
     /**
@@ -36,12 +44,12 @@ class GenericsAccountController extends Controller
      */
     public function store(GenericsAccountRequest $request)
     {
+        // Creamos un nuevo registro de GenericsAccount con los datos validados
         GenericsAccount::create($request->validated());
-
-        return redirect()->route('generics-accounts.index')
-            ->with('success', 'GenericsAccount created successfully.');
+    
+        return redirect()->route('generics-accounts.index') // Redirigimos al índice de GenericsAccount
+            ->with('success', 'Generics Account created successfully.');
     }
-
     /**
      * Display the specified resource.
      */

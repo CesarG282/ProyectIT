@@ -39,6 +39,7 @@
 										<th>Area</th>
 										<th>Responsible</th>
 										<th>Account</th>
+                                        <th>password</th>
 										<th>Sn Computer</th>
 										<th>Brand Computer</th>
 										<th>Users Id</th>
@@ -54,9 +55,11 @@
 											<td>{{ $genericsAccount->area }}</td>
 											<td>{{ $genericsAccount->responsible }}</td>
 											<td>{{ $genericsAccount->account }}</td>
+                                            <td>{{ $genericsAccount->password }}</td>
 											<td>{{ $genericsAccount->sn_computer }}</td>
 											<td>{{ $genericsAccount->brand_computer }}</td>
-											<td>{{ $genericsAccount->users_id }}</td>
+											<td>{{ $genericsAccount->user->name }}</td>
+
 
                                             <td>
                                                 <form action="{{ route('generics-accounts.destroy',$genericsAccount->id) }}" method="POST">

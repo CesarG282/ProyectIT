@@ -23,7 +23,7 @@ class MembersAttentionRequest extends FormRequest
     {
         return [
 			'description' => 'required|string',
-            'date' => 'required|date_format:d-m-Y', // Asegura que el formato de fecha sea 'DD-MM-YYYY'
+			'date' => 'required',
 			'members_id' => 'required',
         ];
     }

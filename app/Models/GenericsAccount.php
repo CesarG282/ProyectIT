@@ -33,7 +33,7 @@ class GenericsAccount extends Model
      *
      * @var array
      */
-    protected $fillable = ['area', 'responsible', 'account', 'sn_computer', 'brand_computer', 'users_id'];
+    protected $fillable = ['area', 'responsible', 'account','password', 'sn_computer', 'brand_computer', 'users_id'];
 
 
     /**
