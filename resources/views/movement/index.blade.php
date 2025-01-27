@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Movement Type</th>
-										<th>Sent</th>
+										<th>Elemento</th>
 										<th>Address</th>
 										<th>Date</th>
 										<th>Shipping Medium</th>
@@ -60,12 +60,12 @@
 											<td>{{ $movement->shipping_medium }}</td>
 											<td>{{ $movement->responsible }}</td>
 											<td>{{ $movement->description }}</td>
-											<td>{{ $movement->users_id }}</td>
+                                            <td>{{ $movement->user->name }}</td>
 
                                             <td>
-                                                <form action="{{ route('movements.destroy',$movement->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('movements.show',$movement->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('movements.edit',$movement->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('movement.destroy',$movement->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('movement.show',$movement->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('movement.edit',$movement->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

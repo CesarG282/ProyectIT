@@ -7,27 +7,27 @@
             {!! $errors->first('area', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="responsible" class="form-label">{{ __('Responsible') }}</label>
+            <label for="responsible" class="form-label">{{ __('Responsable') }}</label>
             <input type="text" name="responsible" class="form-control @error('responsible') is-invalid @enderror" value="{{ old('responsible', $genericsAccount?->responsible) }}" id="responsible" placeholder="Responsible">
             {!! $errors->first('responsible', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="account" class="form-label">{{ __('Account') }}</label>
+            <label for="account" class="form-label">{{ __('Cuenta') }}</label>
             <input type="text" name="account" class="form-control @error('account') is-invalid @enderror" value="{{ old('account', $genericsAccount?->account) }}" id="account" placeholder="Account">
             {!! $errors->first('account', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="password" class="form-label">{{ __('password') }}</label>
+            <label for="password" class="form-label">{{ __('Contraseña') }}</label>
             <input type="text" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password', $genericsAccount?->password) }}" id="password" placeholder="password">
             {!! $errors->first('password', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="sn_computer" class="form-label">{{ __('Sn Computer') }}</label>
+            <label for="sn_computer" class="form-label">{{ __('Sn Computador') }}</label>
             <input type="text" name="sn_computer" class="form-control @error('sn_computer') is-invalid @enderror" value="{{ old('sn_computer', $genericsAccount?->sn_computer) }}" id="sn_computer" placeholder="Sn Computer">
             {!! $errors->first('sn_computer', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="brand_computer" class="form-label">{{ __('Brand Computer') }}</label>
+            <label for="brand_computer" class="form-label">{{ __('Marca Computador') }}</label>
             <input type="text" name="brand_computer" class="form-control @error('brand_computer') is-invalid @enderror" value="{{ old('brand_computer', $genericsAccount?->brand_computer) }}" id="brand_computer" placeholder="Brand Computer">
             {!! $errors->first('brand_computer', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>

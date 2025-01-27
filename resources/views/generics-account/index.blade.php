@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Generics Account') }}
+                                {{ __('Cuentas Genericas') }}
                             </span>
 
                              <div class="float-right">
@@ -37,12 +37,12 @@
                                         <th>No</th>
                                         
 										<th>Area</th>
-										<th>Responsible</th>
-										<th>Account</th>
-                                        <th>password</th>
-										<th>Sn Computer</th>
-										<th>Brand Computer</th>
-										<th>Users Id</th>
+										<th>Responsable</th>
+										<th>Cuenta</th>
+                                        <th>Contraseña</th>
+										<th>Sn Computador</th>
+										<th>Marca Computador</th>
+										<th>Administrador</th>
 
                                         <th></th>
                                     </tr>

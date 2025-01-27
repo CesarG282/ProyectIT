@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movement;
+use App\Models\User;
 use App\Http\Requests\MovementRequest;
 
 /**
@@ -27,21 +28,25 @@ class MovementController extends Controller
      */
     public function create()
     {
-        $movement = new Movement();
-        return view('movement.create', compact('movement'));
+        $users = User::all(); 
+    
+        // Creamos una nueva instancia de Movement (no GenericsAccount)
+        $movement = new Movement();  // Cambié de $genericsAccount a $movement
+        
+        return view('movement.create', compact('movement', 'users'));
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(MovementRequest $request)
     {
-        Movement::create($request->validated());
-
-        return redirect()->route('movements.index')
+        // Creamos un nuevo registro de Movement con los datos validados
+        Movement::create($request->validated());  // Aquí creamos el movimiento correctamente
+    
+        return redirect()->route('movement.index') // Redirigimos al índice de movimientos
             ->with('success', 'Movement created successfully.');
     }
-
     /**
      * Display the specified resource.
      */

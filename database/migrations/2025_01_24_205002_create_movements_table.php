@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date');
             $table->string('shipping_medium', 45);
             $table->string('responsible', 45);
-            $table->string('description', 500);
+            $table->string('description', 5000);
             $table->unsignedBigInteger('users_id')->index('fk_movements_users1_idx');
             $table->timestamps();
         });
