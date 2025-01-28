@@ -62,9 +62,14 @@ class MovementController extends Controller
      */
     public function edit($id)
     {
+        // Encontramos el miembro que estamos editando
         $movement = Movement::find($id);
-
-        return view('movement.edit', compact('movement'));
+    
+        // Cargamos todos los usuarios para que puedan ser seleccionados en el formulario
+        $users = \App\Models\User::all();
+    
+        // Pasamos tanto el miembro como los usuarios a la vista
+        return view('movement.edit', compact('movement', 'users'));
     }
 
     /**
@@ -74,7 +79,7 @@ class MovementController extends Controller
     {
         $movement->update($request->validated());
 
-        return redirect()->route('movements.index')
+        return redirect()->route('movement.index')
             ->with('success', 'Movement updated successfully');
     }
 
@@ -82,7 +87,7 @@ class MovementController extends Controller
     {
         Movement::find($id)->delete();
 
-        return redirect()->route('movements.index')
+        return redirect()->route('movement.index')
             ->with('success', 'Movement deleted successfully');
     }
 }

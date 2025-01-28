@@ -1,7 +1,7 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
         <div class="form-group mb-2 mb20">
-            <label for="movement_type" class="form-label">{{ __('Movement Type') }}</label>
+            <label for="movement_type" class="form-label">{{ __('Tipo de Movimiento') }}</label>
             <select name="movement_type" class="form-control @error('movement_type') is-invalid @enderror" id="movement_type">
                 <option value="" disabled selected>{{ __('Select Movement Type') }}</option>
                 <option value="envio" {{ old('movement_type') == 'envio' ? 'selected' : '' }}>{{ __('Envio') }}</option>

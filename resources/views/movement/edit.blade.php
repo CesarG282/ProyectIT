@@ -14,7 +14,7 @@
                         <span class="card-title">{{ __('Update') }} Movement</span>
                     </div>
                     <div class="card-body bg-white">
-                        <form method="POST" action="{{ route('movements.update', $movement->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('movement.update', $movement->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

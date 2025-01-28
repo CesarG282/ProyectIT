@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Movement') }}
+                                {{ __('Movimientos') }}
                             </span>
 
                              <div class="float-right">
@@ -36,14 +36,14 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Movement Type</th>
+										<th>Tipo de Movimiento</th>
 										<th>Elemento</th>
-										<th>Address</th>
-										<th>Date</th>
-										<th>Shipping Medium</th>
-										<th>Responsible</th>
-										<th>Description</th>
-										<th>Users Id</th>
+										<th>Dirección</th>
+										<th>Fecha</th>
+										<th>Medio de envío</th>
+										<th>Responsable</th>
+										<th>Descripción</th>
+										<th>Administrador</th>
 
                                         <th></th>
                                     </tr>

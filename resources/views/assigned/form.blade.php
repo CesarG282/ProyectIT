@@ -1,13 +1,12 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-        
         <div class="form-group mb-2 mb20">
             <label for="members_id" class="form-label">{{ __('Usuario') }}</label>
             <select name="members_id" class="form-control @error('members_id') is-invalid @enderror" id="members_id">
                 <option value="">Seleccione un Miembro</option> <!-- Opción vacía para seleccionar -->
-                @foreach($members as $member)
-                    <option value="{{ $member->id }}" {{ old('members_id') == $member->id ? 'selected' : '' }}>
-                        {{ $member->name }}  <!-- Aquí estamos mostrando el 'name' del miembro -->
+                @foreach($members as $user) <!-- Asegúrate que sea $members si pasas esa variable desde el controlador -->
+                    <option value="{{ $user->id }}" {{ old('members_id', $assigned->members_id) == $user->id ? 'selected' : '' }}>
+                        {{ $user->name }}  
                     </option>
                 @endforeach
             </select>

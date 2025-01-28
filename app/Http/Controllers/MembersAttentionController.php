@@ -69,7 +69,7 @@ class MembersAttentionController extends Controller
     {
         $membersAttention->update($request->validated());
 
-        return redirect()->route('members-attentions.index')
+        return redirect()->route('members-attention.index')
             ->with('success', 'MembersAttention updated successfully');
     }
 

@@ -57,11 +57,17 @@ class AssignedController extends Controller
      */
     public function edit($id)
     {
+        // Encontramos el miembro que estamos editando
         $assigned = Assigned::find($id);
-
-        return view('assigned.edit', compact('assigned'));
+        
+        // Cargamos todos los miembros para que puedan ser seleccionados en el formulario
+        $members = \App\Models\Member::all();
+        
+        // Pasamos tanto el miembro como los miembros (users) a la vista
+        return view('assigned.edit', compact('assigned', 'members'));
     }
-
+    
+    
     /**
      * Update the specified resource in storage.
      */

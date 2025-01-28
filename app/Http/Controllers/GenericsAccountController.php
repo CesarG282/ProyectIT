@@ -65,9 +65,14 @@ class GenericsAccountController extends Controller
      */
     public function edit($id)
     {
+        // Encontramos el miembro que estamos editando
         $genericsAccount = GenericsAccount::find($id);
-
-        return view('generics-account.edit', compact('genericsAccount'));
+    
+        // Cargamos todos los usuarios para que puedan ser seleccionados en el formulario
+        $users = \App\Models\User::all();
+    
+        // Pasamos tanto el miembro como los usuarios a la vista
+        return view('generics-account.edit', compact('genericsAccount', 'users'));
     }
 
     /**
