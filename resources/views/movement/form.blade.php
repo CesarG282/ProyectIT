@@ -28,7 +28,7 @@
             {!! $errors->first('date', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="shipping_medium" class="form-label">{{ __('Shipping Medium') }}</label>
+            <label for="shipping_medium" class="form-label">{{ __('Medio de envio') }}</label>
             <input type="text" name="shipping_medium" class="form-control @error('shipping_medium') is-invalid @enderror" value="{{ old('shipping_medium', $movement?->shipping_medium) }}" id="shipping_medium" placeholder="Shipping Medium">
             {!! $errors->first('shipping_medium', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
