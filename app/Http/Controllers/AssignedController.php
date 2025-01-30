@@ -75,7 +75,7 @@ class AssignedController extends Controller
     {
         $assigned->update($request->validated());
 
-        return redirect()->route('assigneds.index')
+        return redirect()->route('assigned.index')
             ->with('success', 'Assigned updated successfully');
     }
     public function destroy($id)
