@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MembersAttention;
+use App\Models\Member;  // Importar el modelo Member
 use App\Http\Requests\MembersAttentionRequest;
 
 /**
@@ -26,10 +27,12 @@ class MembersAttentionController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        $membersAttention = new MembersAttention();
-        return view('members-attention.create', compact('membersAttention'));
-    }
+{
+    $membersAttentions = new MembersAttention();
+    $members = Member::all();  // Obtener todos los miembros de la base de datos
+    return view('members-attention.create', compact('members', 'membersAttentions'));  // Pasar los miembros y la variable correcta
+}
+
 
     /**
      * Store a newly created resource in storage.

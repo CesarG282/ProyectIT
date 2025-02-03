@@ -54,10 +54,11 @@
                                 <td>{{ $member->user->name ?? 'No user assigned' }}</td>
                                 <td>
                                     <form action="{{ route('members.destroy', $member->id) }}" method="POST">
-                                        <a class="btn btn-sm btn-primary" href="{{ route('members.show', $member->id) }}">
-                                            <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
-                                        </a>
-                                        <a class="btn btn-sm btn-success" href="{{ route('members.edit', $member->id) }}">
+                                        <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showMemberDetail({{ $member->id }})">
+    <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
+</a>
+
+                                        <a class="btn btn-sm btn-warning" href="{{ route('members.edit', $member->id) }}">
                                             <i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}
                                         </a>
                                         @csrf
@@ -74,9 +75,78 @@
             </div>
         </div>
     </div>
-    {!! $members->links() !!}
+    
+<!-- Modal para Detalle del Miembro -->
+<div id="memberDetailModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="memberDetailContent">
+            <!-- Aquí se cargará el detalle del miembro -->
+        </div>
+    </div>
 </div>
 
+<style>
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 9999;
+    transition: all 0.4s ease-in-out;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    animation: slideUp 0.4s ease-out;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    font-size: 24px;
+    color: red;
+    float: right;
+    cursor: pointer;
+}
+/* Ocultar los módulos de la barra de navegación solo en el modal */
+#memberDetailModal .navbar-nav {
+    display: none !important;
+
+</style>
+
+<script>
+function showMemberDetail(id) {
+    fetch(`/members/${id}`)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('memberDetailContent').innerHTML = html;
+            document.getElementById('memberDetailModal').style.display = 'flex';
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function closeModal() {
+    document.getElementById('memberDetailModal').style.display = 'none';
+}
+</script>
 <!-- CSS de Bootstrap 4 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
 

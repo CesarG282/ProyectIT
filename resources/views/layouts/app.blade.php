@@ -189,7 +189,7 @@
             <img src="{{ asset('images/Logo-footer.png') }}" alt="Logo">
         </div>
         <div class="right-side">
-            <p>Este software es propiedad de la Administración de IT de IT Bavaria, desarrollado como parte del proceso de formación de uno de sus aprendices<br> Todos los derechos reservados.</p>
+            <p>Este software es propiedad de la Administración de IT de Bavaria, desarrollado como parte del proceso de formación de uno de sus aprendices<br> Todos los derechos reservados.</p>
         </div>
     </footer>
 </body>
