@@ -3,11 +3,11 @@
 @section('template_title')
     {{ __('Usuarios') }}
 @endsection
+
 <!-- Bootstrap Icons (opcional para íconos adicionales) -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
 @section('content')
-
 <div class="container-fluid mt-4">
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
