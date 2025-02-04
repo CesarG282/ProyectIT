@@ -55,8 +55,8 @@
                                 <td>
                                     <form action="{{ route('members.destroy', $member->id) }}" method="POST">
                                         <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showMemberDetail({{ $member->id }})">
-    <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
-</a>
+                                         <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
+                                            </a>
 
                                         <a class="btn btn-sm btn-warning" href="{{ route('members.edit', $member->id) }}">
                                             <i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}

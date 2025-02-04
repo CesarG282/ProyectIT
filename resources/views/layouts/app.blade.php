@@ -32,7 +32,8 @@
 
         /* Cambiar el color de los enlaces cuando el mouse pasa por encima */
         .navbar-nav .nav-link:hover {
-            color: #dcdcdc; /* Color gris claro al pasar el mouse */
+            color: white; /* Color blanco para el logo */
+            ; /* Color gris claro al pasar el mouse */
         }
 
         /* Asegurarse de que el logo también sea blanco */
