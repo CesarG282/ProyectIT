@@ -6,82 +6,154 @@
 
 @section('content')
 <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Movimientos') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('movement.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success m-4">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body bg-white">
-                        <div class="table-responsive">
-                            <table id="mytable" class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-										<th>Tipo de Movimiento</th>
-										<th>Elemento</th>
-										<th>Dirección</th>
-										<th>Fecha</th>
-										<th>Medio de envío</th>
-										<th>Responsable</th>
-										<th>Descripción</th>
-										<th>Administrador</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($movements as $movement)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $movement->movement_type }}</td>
-											<td>{{ $movement->sent }}</td>
-											<td>{{ $movement->address }}</td>
-											<td>{{ $movement->date }}</td>
-											<td>{{ $movement->shipping_medium }}</td>
-											<td>{{ $movement->responsible }}</td>
-											<td>{{ $movement->description }}</td>
-                                            <td>{{ $movement->user->name }}</td>
-
-                                            <td>
-                                                <form action="{{ route('movement.destroy',$movement->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('movement.show',$movement->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-warning" href="{{ route('movement.edit',$movement->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span id="card_title">{{ __('Movimientos') }}</span>
+                        <div class="float-right">
+                            <a href="{{ route('movement.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                                {{ __('Create New') }}
+                            </a>
                         </div>
                     </div>
                 </div>
-                {!! $movements->links() !!}
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success m-4">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+
+                <div class="card-body bg-white">
+                    <div class="table-responsive">
+                        <table id="mytable" class="table table-striped table-hover">
+                            <thead class="thead">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Tipo de Movimiento</th>
+                                    <th>Elemento</th>
+                                    <th>Dirección</th>
+                                    <th>Fecha</th>
+                                    <th>Medio de envío</th>
+                                    <th>Responsable</th>
+                                    <th>Descripción</th>
+                                    <th>Administrador</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($movements as $movement)
+                                    <tr>
+                                        <td>{{ ++$i }}</td>
+                                        <td>{{ $movement->movement_type }}</td>
+                                        <td>{{ $movement->sent }}</td>
+                                        <td>{{ $movement->address }}</td>
+                                        <td>{{ $movement->date }}</td>
+                                        <td>{{ $movement->shipping_medium }}</td>
+                                        <td>{{ $movement->responsible }}</td>
+                                        <td>{{ $movement->description }}</td>
+                                        <td>{{ $movement->user->name }}</td>
+                                        <td>
+                                            <form action="{{ route('movement.destroy', $movement->id) }}" method="POST">
+                                                <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showMovementDetail({{ $movement->id }})">
+                                                    <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
+                                                </a>
+                                                <a class="btn btn-sm btn-warning" href="{{ route('movement.edit', $movement->id) }}">
+                                                    <i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}
+                                                </a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            
+            {!! $movements->links() !!}
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Detalle de Movimiento -->
+<div id="movementDetailModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div id="movementDetailContent">
+            <!-- Aquí se cargará el detalle del movimiento -->
+        </div>
+    </div>
+</div>
+
+<style>
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 9999;
+    transition: all 0.4s ease-in-out;
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px 10px 0 0;
+    padding: 20px;
+    animation: slideUp 0.4s ease-out;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    font-size: 24px;
+    color: red;
+    float: right;
+    cursor: pointer;
+}
+
+#movementDetailModal .navbar-nav {
+    display: none !important;
+
+</style>
+
+<script>
+function showMovementDetail(id) {
+    fetch(`/movement/${id}`)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById('movementDetailContent').innerHTML = html;
+            document.getElementById('movementDetailModal').style.display = 'flex';
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function closeModal() {
+    document.getElementById('movementDetailModal').style.display = 'none';
+}
+</script>
+
 <!-- CSS de Bootstrap 4 -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/css/bootstrap.min.css">
 
@@ -123,7 +195,5 @@
             }
         });
     });
-    </script>
-        </div>
-    </div>
+</script>
 @endsection

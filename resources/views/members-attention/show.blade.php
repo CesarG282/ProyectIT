@@ -14,7 +14,7 @@
                             <span class="card-title">{{ __('Show') }} Members Attention</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary btn-sm" href="{{ route('members-attentions.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary btn-sm" href="{{ route('members-attention.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 

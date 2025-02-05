@@ -1,101 +1,99 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Assigned
+    Asignados
 @endsection
 
 @section('content')
 <br>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
-                                {{ __('Asignados') }}
-                            </span>
-
-                             <div class="float-right">
-                                <a href="{{ route('assigned.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
-                        </div>
-                    </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success m-4">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
-
-                    <div class="card-body bg-white">
-                        <div class="table-responsive">
-                            <table id="mytable" class="table table-striped table-hover">
-                                <thead class="thead">
-                                    <tr>
-                                        <th>No</th>
-                                        
-									<th>Usuario</th>
-									<th>Status</th>
-									<th>Tipo</th>
-									<th>Marca</th>
-									<th>Serie</th>
-									<th>Modelo</th>
-									<th>Stiker</th>
-									<th>Monitor</th>
-									<th>Teclado</th>
-									<th>Mouse</th>
-									<th>Adaptador</th>
-									<th>Descripción</th>
-
-                                        <th></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($assigneds as $assigned)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-                                            <td>{{ $assigned->member->name }}</td>
-										<td>{{ $assigned->status }}</td>
-										<td>{{ $assigned->type }}</td>
-										<td>{{ $assigned->brand }}</td>
-										<td>{{ $assigned->serie }}</td>
-										<td>{{ $assigned->model }}</td>
-										<td>{{ $assigned->stiker }}</td>
-										<td>{{ $assigned->monitor }}</td>
-										<td>{{ $assigned->keyboard }}</td>
-										<td>{{ $assigned->mouse }}</td>
-										<td>{{ $assigned->adaptador }}</td>
-										<td>{{ $assigned->description }}</td>
-
-                                            <td>
-                                                <form action="{{ route('assigned.destroy',$assigned->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showAssignedDetail({{ $assigned->id }})">
-                                                        <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
-                                                           </a>
-                                                        <a class="btn btn-sm btn-warning" href="{{ route('assigned.edit',$assigned->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
-                                                </form>
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span id="card_title">{{ __('Asignados') }}</span>
+                        <div class="float-right">
+                            <a href="{{ route('assigned.create') }}" class="btn btn-primary btn-sm float-right" data-placement="left">
+                                {{ __('Create New') }}
+                            </a>
                         </div>
                     </div>
                 </div>
-                        
-<!-- Modal para Detalle del Miembro -->
+                @if ($message = Session::get('success'))
+                    <div class="alert alert-success m-4">
+                        <p>{{ $message }}</p>
+                    </div>
+                @endif
+                <div class="card-body bg-white">
+                    <div class="table-responsive">
+                        <table id="mytable" class="table table-striped table-hover">
+                            <thead class="thead">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Usuario</th>
+                                    <th>Status</th>
+                                    <th>Tipo</th>
+                                    <th>Marca</th>
+                                    <th>Serie</th>
+                                    <th>Modelo</th>
+                                    <th>Stiker</th>
+                                    <th>Monitor</th>
+                                    <th>Teclado</th>
+                                    <th>Mouse</th>
+                                    <th>Adaptador</th>
+                                    <th>Descripción</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($assigneds as $assigned)
+                                    <tr>
+                                        <td>{{ ++$i }}</td>
+                                        <td>{{ $assigned->member->name }}</td>
+                                        <td>{{ $assigned->status }}</td>
+                                        <td>{{ $assigned->type }}</td>
+                                        <td>{{ $assigned->brand }}</td>
+                                        <td>{{ $assigned->serie }}</td>
+                                        <td>{{ $assigned->model }}</td>
+                                        <td>{{ $assigned->stiker }}</td>
+                                        <td>{{ $assigned->monitor }}</td>
+                                        <td>{{ $assigned->keyboard }}</td>
+                                        <td>{{ $assigned->mouse }}</td>
+                                        <td>{{ $assigned->adaptador }}</td>
+                                        <td>{{ $assigned->description }}</td>
+                                        <td>
+                                            <form action="{{ route('assigned.destroy', $assigned->id) }}" method="POST">
+                                                <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showAssignedDetail({{ $assigned->id }})">
+                                                    <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
+                                                </a>
+                                                <a class="btn btn-sm btn-warning" href="{{ route('assigned.edit', $assigned->id) }}">
+                                                    <i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}
+                                                </a>
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Detalle del Asignado -->
 <div id="assignedDetailModal" class="modal-overlay" style="display: none;">
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
         <div id="assignedDetailContent">
-            <!-- Aquí se cargará el detalle del miembro -->
+            <!-- Aquí se cargará el detalle del asignado -->
         </div>
     </div>
 </div>
@@ -110,7 +108,7 @@
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
     z-index: 9999;
     transition: all 0.4s ease-in-out;
 }
@@ -119,10 +117,10 @@
     background: white;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 10px 10px 0 0;
     padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     animation: slideUp 0.4s ease-out;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
 }
 
 @keyframes slideUp {
@@ -140,13 +138,16 @@
     float: right;
     cursor: pointer;
 }
-display: none !important;
+
+/* Ocultar los módulos de la barra de navegación solo en el modal */
+#assignedDetailModal .navbar-nav {
+    display: none !important;
 </style>
 
 <script>
 function showAssignedDetail(id) {
     fetch(`/assigned/${id}`)
-        .then(response => response.ok ? response.text() : Promise.reject('Error al cargar los datos'))
+        .then(response => response.text())
         .then(html => {
             document.getElementById('assignedDetailContent').innerHTML = html;
             document.getElementById('assignedDetailModal').style.display = 'flex';
@@ -179,30 +180,27 @@ function closeModal() {
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
 
 <script>
-    $(document).ready(function() {
-        $('#mytable').DataTable({
-            responsive: true,
-            language: {
-                "sProcessing": "Procesando...",
-                "sLengthMenu": "Mostrar _MENU_ registros",
-                "sZeroRecords": "No se encontraron resultados",
-                "sEmptyTable": "Ningún dato disponible en esta tabla",
-                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                "sSearch": "Buscar:",
-                "oPaginate": {
-                    "sFirst": "Primero",
-                    "sLast": "Último",
-                    "sNext": "Siguiente",
-                    "sPrevious": "Anterior"
-                }
+$(document).ready(function() {
+    $('#mytable').DataTable({
+        responsive: true,
+        language: {
+            "sProcessing": "Procesando...",
+            "sLengthMenu": "Mostrar _MENU_ registros",
+            "sZeroRecords": "No se encontraron resultados",
+            "sEmptyTable": "Ningún dato disponible en esta tabla",
+            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+            "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+            "sSearch": "Buscar:",
+            "oPaginate": {
+                "sFirst": "Primero",
+                "sLast": "Último",
+                "sNext": "Siguiente",
+                "sPrevious": "Anterior"
             }
-        });
+        }
     });
+});
 </script>
 
-            </div>
-        </div>
-    </div>
 @endsection
