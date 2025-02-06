@@ -5,10 +5,9 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-
+<section class="content container-fluid d-flex justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="row w-100 justify-content-center">
+            <div class="col-md-9">
                 <div class="card card-default">
                     <div class="card-header">
                         <span class="card-title">{{ __('Crear') }} Cuenta Generica</span>

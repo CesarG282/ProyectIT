@@ -43,7 +43,34 @@
         </div>
 
     </div>
+   
     <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary btn-submit">{{ __('Submit') }}</button>
     </div>
+    
 </div>
+<style>
+    /* Centrar los campos de entrada */
+    .form-control {
+        width: 90%; /* Reduce el largo de los campos */
+        height: 42px; /* Aumenta el alto de los campos */
+        margin-bottom: 15px; /* Añade un margen inferior */
+        margin-left: auto;  /* Centra el campo de formulario horizontalmente */
+        margin-right: auto; /* Centra el campo de formulario horizontalmente */
+    }
+    /* Centrar las etiquetas de los campos con un margen y padding */
+    .form-label {
+        display: block; /* Hace que las etiquetas ocupen el 100% de su contenedor */
+        width: 100%; /* Hace que las etiquetas ocupen todo el ancho disponible */
+        margin-bottom: 10px; /* Margen debajo de las etiquetas */
+        padding-left: 5%; /* Espacio a la izquierda de la etiqueta */
+        padding-right: 20px; /* Espacio a la derecha de la etiqueta */
+    }
+
+    /* Estilo para centrar el botón y que tenga el mismo tamaño que los campos del formulario */
+    .btn-submit {
+        margin-left: 50%; /* Centra el botón horizontalmente */
+        margin-right: auto; /* Centra el botón horizontalmente */
+        margin-top: 15px; /* Añade un margen superior para separarlo de los campos */
+    }
+</style>

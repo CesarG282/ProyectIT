@@ -71,7 +71,7 @@
 
     </div>
     <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary btn-submit">{{ __('Submit') }}</button>
     </div>
 </div>
 
@@ -84,5 +84,10 @@
 
     .col-md-8 {
         max-width: 600px; /* Limita el ancho máximo del formulario */
+    }
+    .btn-submit {
+        margin-left: 50%; /* Centra el botón horizontalmente */
+        margin-right: auto; /* Centra el botón horizontalmente */
+        margin-top: 15px; /* Añade un margen superior para separarlo de los campos */
     }
 </style>
