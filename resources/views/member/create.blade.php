@@ -5,16 +5,16 @@
 @endsection
 
 @section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
+    <section class="content container-fluid d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="row w-100 justify-content-center">
+            <div class="col-md-9">
 
                 <div class="card card-default">
                     <div class="card-header">
                         <span class="card-title">{{ __('Crear') }} Usuario</span>
                     </div>
                     <div class="card-body bg-white">
-                        <form method="POST" action="{{ route('members.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('members.store') }}" role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('member.form')

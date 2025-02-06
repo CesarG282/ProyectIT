@@ -60,10 +60,17 @@ class MembersAttentionController extends Controller
      */
     public function edit($id)
     {
+        // Encontramos el miembro que estamos editando
         $membersAttention = MembersAttention::find($id);
-
-        return view('members-attention.edit', compact('membersAttention'));
+        
+        // Cargamos todos los miembros para que puedan ser seleccionados en el formulario
+        $members = \App\Models\Member::all();  // Aquí cargamos los miembros de la tabla Member
+        
+        // Pasamos tanto el miembro que estamos editando como todos los miembros (users) a la vista
+        return view('members-attention.edit', compact('members', 'membersAttention'));
     }
+    
+    
 
     /**
      * Update the specified resource in storage.

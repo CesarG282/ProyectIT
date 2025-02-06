@@ -19,12 +19,12 @@
             {!! $errors->first('status', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="type" class="form-label">{{ __('Type') }}</label>
+            <label for="type" class="form-label">{{ __('Tipo') }}</label>
             <input type="text" name="type" class="form-control @error('type') is-invalid @enderror" value="{{ old('type', $assigned?->type) }}" id="type" placeholder="Type">
             {!! $errors->first('type', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="brand" class="form-label">{{ __('Brand') }}</label>
+            <label for="brand" class="form-label">{{ __('Marca') }}</label>
             <input type="text" name="brand" class="form-control @error('brand') is-invalid @enderror" value="{{ old('brand', $assigned?->brand) }}" id="brand" placeholder="Brand">
             {!! $errors->first('brand', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -34,7 +34,7 @@
             {!! $errors->first('serie', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="model" class="form-label">{{ __('Model') }}</label>
+            <label for="model" class="form-label">{{ __('Modelo') }}</label>
             <input type="text" name="model" class="form-control @error('model') is-invalid @enderror" value="{{ old('model', $assigned?->model) }}" id="model" placeholder="Model">
             {!! $errors->first('model', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -49,7 +49,7 @@
             {!! $errors->first('monitor', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="keyboard" class="form-label">{{ __('Keyboard') }}</label>
+            <label for="keyboard" class="form-label">{{ __('Teclado') }}</label>
             <input type="text" name="keyboard" class="form-control @error('keyboard') is-invalid @enderror" value="{{ old('keyboard', $assigned?->keyboard) }}" id="keyboard" placeholder="Keyboard">
             {!! $errors->first('keyboard', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -64,7 +64,7 @@
             {!! $errors->first('adaptador', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="description" class="form-label">{{ __('Description') }}</label>
+            <label for="description" class="form-label">{{ __('Descripcion') }}</label>
             <input type="text" name="description" class="form-control @error('description') is-invalid @enderror" value="{{ old('description', $assigned?->description) }}" id="description" placeholder="Description">
             {!! $errors->first('description', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
@@ -74,3 +74,15 @@
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
     </div>
 </div>
+
+<style>
+    .form-control {
+        width: 95%; /* Reduce el largo de los campos */
+        height: 42px; /* Aumenta el alto de los campos */
+        margin-bottom: 15px; /* Añade un margen inferior */
+    }
+
+    .col-md-8 {
+        max-width: 600px; /* Limita el ancho máximo del formulario */
+    }
+</style>

@@ -50,6 +50,18 @@
 
     </div>
     <div class="col-md-12 mt20 mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
     </div>
 </div>
+
+<style>
+    .form-control {
+        width: 95%; /* Reduce el largo de los campos */
+        height: 42px; /* Aumenta el alto de los campos */
+        margin-bottom: 15px; /* Añade un margen inferior */
+    }
+
+    .col-md-8 {
+        max-width: 600px; /* Limita el ancho máximo del formulario */
+    }
+</style>
