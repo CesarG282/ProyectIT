@@ -67,10 +67,8 @@ class MembersAttentionController extends Controller
         $members = \App\Models\Member::all();  // Aquí cargamos los miembros de la tabla Member
         
         // Pasamos tanto el miembro que estamos editando como todos los miembros (users) a la vista
-        return view('members-attention.edit', compact('members', 'membersAttention'));
+        return view('members-attention.edit', compact( 'membersAttention', 'members',));
     }
-    
-    
 
     /**
      * Update the specified resource in storage.
