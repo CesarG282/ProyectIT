@@ -88,9 +88,15 @@ class GenericsAccountController extends Controller
 
     public function destroy($id)
     {
-        GenericsAccount::find($id)->delete();
-
+        // Eliminar el miembro
+        $genericsAccount = GenericsAccount::find($id);
+    
+        if ($genericsAccount) {
+            $genericsAccount->delete();
+        }
+    
+        // Redirigir con un mensaje de éxito
         return redirect()->route('generics-accounts.index')
-            ->with('success', 'GenericsAccount deleted successfully');
+            ->with('eliminar', 'ok');
     }
 }

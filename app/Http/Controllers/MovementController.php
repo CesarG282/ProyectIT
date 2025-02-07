@@ -85,9 +85,15 @@ class MovementController extends Controller
 
     public function destroy($id)
     {
-        Movement::find($id)->delete();
-
+        // Eliminar el miembro
+        $movement = Movement::find($id);
+    
+        if ($movement) {
+            $movement->delete();
+        }
+    
+        // Redirigir con un mensaje de éxito
         return redirect()->route('movement.index')
-            ->with('success', 'Movement deleted successfully');
+            ->with('eliminar', 'ok'); // Asegúrate de que el nombre sea 'eliminar'
     }
 }

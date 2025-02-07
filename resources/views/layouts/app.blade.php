@@ -193,5 +193,6 @@
             <p>Este software es propiedad de la Administración de IT de Bavaria, desarrollado como parte del proceso de formación de uno de sus aprendices<br> Todos los derechos reservados.</p>
         </div>
     </footer>
+    @yield('js')
 </body>
 </html>

@@ -39,10 +39,12 @@
         <div class="form-group mb-2 mb20">
             <label for="users_id" class="form-label">{{ __('Administrador') }}</label>
             <select name="users_id" class="form-control @error('users_id') is-invalid @enderror" id="users_id">
-                <option value="" disabled selected>{{ __('Select a user') }}</option>
+                <op tion value="" disabled selected>{{ __('Select a user') }}</op>
                 @foreach($users as $user)
-                    <option value="{{ $user->id }}" {{ old('users_id') == $user->id ? 'selected' : '' }}>{{ $user->name }}</option>
-                @endforeach
+                <option value="{{ $user->id }}" {{ old('users_id', $user?->users_id) == $user->id ? 'selected' : '' }}>
+                    {{ $user->name }}
+                </option>
+                    @endforeach
             </select>
             {!! $errors->first('users_id', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>

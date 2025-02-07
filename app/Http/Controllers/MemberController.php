@@ -60,16 +60,17 @@ class MemberController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit($id)
-    {
-        // Encontramos el miembro que estamos editando
-        $member = Member::find($id);
-    
-        // Cargamos todos los usuarios para que puedan ser seleccionados en el formulario
-        $users = \App\Models\User::all();
-    
-        // Pasamos tanto el miembro como los usuarios a la vista
-        return view('member.edit', compact('member', 'users'));
-    }
+{
+    // Encontramos el miembro que estamos editando
+    $member = Member::find($id);
+
+    // Cargamos todos los usuarios para que puedan ser seleccionados en el formulario
+    $users = \App\Models\User::all();
+
+    // Pasamos tanto el miembro como los usuarios a la vista
+    return view('member.edit', compact('member', 'users'));
+}
+
     
 
     /**
@@ -85,9 +86,17 @@ class MemberController extends Controller
 
     public function destroy($id)
     {
-        Member::find($id)->delete();
-
+        // Eliminar el miembro
+        $member = Member::find($id);
+    
+        if ($member) {
+            $member->delete();
+        }
+    
+        // Redirigir con un mensaje de éxito
         return redirect()->route('members.index')
-            ->with('success', 'Member deleted successfully');
+            ->with('eliminar', 'ok'); // Asegúrate de que el nombre sea 'eliminar'
     }
+    
+    
 }

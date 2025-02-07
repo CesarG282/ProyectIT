@@ -80,19 +80,16 @@ class AssignedController extends Controller
     }
     public function destroy($id)
     {
+        // Eliminar el miembro
         $assigned = Assigned::find($id);
     
-        // Si no se encuentra el registro, redirige con un mensaje de error
-        if (!$assigned) {
-            return redirect()->route('assigned.index')
-                ->with('error', 'Assigned not found');
+        if ($assigned) {
+            $assigned->delete();
         }
     
-        // Si se encuentra, elimina el registro
-        $assigned->delete();
-    
+        // Redirigir con un mensaje de éxito
         return redirect()->route('assigned.index')
-            ->with('success', 'Assigned deleted successfully');
+            ->with('eliminar', 'ok');
     }
     
 }

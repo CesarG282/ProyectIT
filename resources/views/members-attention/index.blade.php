@@ -46,7 +46,7 @@
                                         <td>{{ $membersAttention->date }}</td>
                                         <td>{{ $membersAttention->member->name }}</td>
                                         <td>
-                                            <form action="{{ route('members-attention.destroy', $membersAttention->id) }}" method="POST">
+                                            <form action="{{ route('members-attention.destroy', $membersAttention->id) }}" method="POST" class="formulario-eliminar">
                                                 <a class="btn btn-sm btn-primary" href="javascript:void(0);" onclick="showMemberAttentionDetail({{ $membersAttention->id }})">
                                                     <i class="fa fa-fw fa-eye"></i> {{ __('Show') }}
                                                 </a>
@@ -186,4 +186,42 @@ function closeModal() {
         });
     });
 </script>
+@endsection
+
+<!-- Sección para cargar el script SweetAlert2 -->
+
+@section('js')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Mostrar mensaje de éxito si se ha eliminado con éxito -->
+    @if(session('eliminar') == 'ok')
+        <script>
+            Swal.fire({
+                title: "¡Eliminado!",
+                text: "El Dato ha sido eliminado con éxito.",
+                icon: "success"
+            });
+        </script>
+    @endif
+
+    <!-- Alerta de confirmación antes de eliminar -->
+    <script>
+        $('.formulario-eliminar').submit(function(e){
+            e.preventDefault(); // Evitar que se envíe el formulario de inmediato
+            Swal.fire({
+                title: "¿Estás Seguro?",
+                text: "Este dato se eliminará definitivamente",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Sí, Eliminar!",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    this.submit(); // Enviar el formulario si el usuario confirma
+                }
+            });
+        });
+    </script>
 @endsection

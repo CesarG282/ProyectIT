@@ -83,9 +83,16 @@ class MembersAttentionController extends Controller
 
     public function destroy($id)
     {
-        MembersAttention::find($id)->delete();
-
-        return redirect()->route('members-attentions.index')
-            ->with('success', 'MembersAttention deleted successfully');
+        // Eliminar el miembro
+        $membersAttention = MembersAttention::find($id);
+    
+        if ($membersAttention) {
+            $membersAttention->delete();
+        }
+    
+        // Redirigir con un mensaje de éxito
+        return redirect()->route('members-attention.index')
+            ->with('eliminar', 'ok');
     }
+    
 }
